@@ -1,0 +1,36 @@
+.card{
+    width: 250px;
+    height: 90px;
+    background-color: #D4AF9A;
+    border-radius: 20px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card_top{
+    width: 100%;
+    /* height: 50px; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.con{
+    width: 100%;
+    /* background-color: firebrick; */
+}
+
+.word{
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.pronunciation{
+    font-size: 13px;
+}
+
+.meaning{
+    font-size: 20px;
+}
