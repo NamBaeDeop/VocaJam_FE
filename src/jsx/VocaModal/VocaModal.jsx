@@ -22,12 +22,12 @@ export default function VocaModal(){
     return (
         <>
             <div className="modal">
-                <div >
-                    <h1>{voca[0].word}</h1>
+                <div className="title_exit">
+                    {voca ? <div className="top_con word">{voca[0]?.word}</div> : null}
                     {/* map이나 filter 활용 */}
-                    <h2>X</h2>
+                    <div className="top_con exit">X</div>
                 </div>
-                <div >
+                <div className="btns">
                     <div className="btn">수정</div>
                     <div className="btn">삭제</div>
                 </div>
