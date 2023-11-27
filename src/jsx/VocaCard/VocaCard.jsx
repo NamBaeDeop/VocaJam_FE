@@ -39,7 +39,7 @@ export default function VocaPage(){
             <div className="card">
                 <div className="con card_top">
                 {voca ? <span className="word">{voca[0]?.word}</span> : null}
-                <span className="word">&middot;&middot;&middot;</span>
+                <span className="word to_modal">&middot;&middot;&middot;</span>
                 </div>
                 {voca ? <span className="con pronunciation">&#91;{voca[0]?.pronunciation}&#93;</span> : null}
                 {voca ? <span className="con meaning">{voca[0]?.meaning}</span> : null}
