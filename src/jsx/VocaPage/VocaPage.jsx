@@ -1,6 +1,7 @@
 import React from "react";
 // import { useState, useEffect } from "react";
 // import '../../css/vocaModal.css';
+import VocaCard from "./jsx/VocaCard/VocaCard";
 
 
 export default function VocaPage(){

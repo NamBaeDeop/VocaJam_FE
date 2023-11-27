@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import '../../css/vocaCard.css';
 
-export default function VocaPage(){
+export default function VocaCard(){
     // const [voca, setVoca] = useState([]);
 
     // const getData=()=>{
