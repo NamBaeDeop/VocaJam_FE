@@ -1,9 +1,15 @@
-import Game from "./jsx/game/Game";
+import Header from './Header';
+import Footer from './Footer';
+import VocaSection from './VocaSection';
+import './css/wrap.css';
+
 function App() {
   return (
-    <>
-      <Game />
-    </>
+    <div id='wrap'>
+      <Header/>
+      <VocaSection/>
+      <Footer/>
+    </div>
   );
 }
 
