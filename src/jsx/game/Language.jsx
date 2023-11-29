@@ -1,7 +1,7 @@
 import LanguageBox from "../../css/game/LanguageStyle";
 function Language(props) {
   return (
-    <LanguageBox className={props.pop}>
+    <LanguageBox className={`${props.pop} ${"language"}`}>
       <span
         onClick={() => {
           props.setPop("remove");

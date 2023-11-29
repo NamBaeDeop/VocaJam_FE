@@ -10,6 +10,9 @@ const LanguageBox = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
+  top: 18vh;
+  z-index: 2;
+
   background-color: #efaaaa;
 
   .languageBox {

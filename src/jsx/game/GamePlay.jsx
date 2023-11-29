@@ -2,18 +2,23 @@
 import { FaGlobeAsia } from "react-icons/fa";
 import Language from "./Language";
 import { useEffect, useRef, useState } from "react";
+import Play from "../../css/game/Play";
 
 function GamePlay(props) {
   const [pop, setPop] = useState("remove");
-  // console.log(pop);
+  const [arr, setArr] = useState([]);
+  const [hint, setHint] = useState(false);
+  const [click, setClick] = useState(0);
+  const [worng, setWrong] = useState("");
+  const [good, setGood] = useState("");
 
-  let arr = useRef();
+  let ref = useRef();
+
   const fetchFunc = async () => {
     try {
       let respons = await fetch("./words.json");
       let dataArr = await respons.json();
-      console.log(dataArr);
-      arr.current = dataArr;
+      setArr(dataArr);
     } catch (err) {
       console.log("err", err);
     }
@@ -21,15 +26,42 @@ function GamePlay(props) {
 
   useEffect(() => {
     fetchFunc();
-  }, []);
 
-  // console.log(arr.current.length);
-  let random = Math.floor(Math.random() * arr.current.length);
-  // console.log();
-  // console.log();
-  // arr.current.map((x) => console.log(x));
+    let set = new Set();
+    while (set.size != 4) {
+      set.add(Math.floor(Math.random() * 4));
+    }
+
+    ref.current = Array.from(set);
+  }, [props.score]);
+
+  const answerArr = [
+    arr.meaning,
+    arr.otherMeaning1,
+    arr.otherMeaning2,
+    arr.otherMeaning3,
+  ];
+  const classArr = ["mean", "no", "no", "no"];
+
+  const answer = (e) => {
+    if (e.target.className.replace("answer ", "") == "mean") {
+      setGood("good");
+      e.target.className = e.target.className + good;
+    } else {
+      setWrong("wrong");
+      e.target.className = e.target.className + worng;
+      props.answerBtn.current.map((x, y) =>
+        x.className.replace("answer ", "") == "mean"
+          ? (x.className = x.className + good)
+          : ""
+      );
+    }
+    setTimeout(() => props.setScore((prev) => (prev = prev + 1)), 1500);
+  };
+
   return (
-    <>
+    <Play>
+      <Language pop={pop} setPop={setPop} />
       <div className="gameHeader">
         <FaGlobeAsia
           className="globe"
@@ -38,24 +70,73 @@ function GamePlay(props) {
           }}
         />
         <p className="progress">
-          <span>0</span>/10
+          <span>{props.score}</span>/10
         </p>
       </div>
       <div className="gameSection">
-        <div className="question">{arr.current[props.score].word}</div>
+        <div className="question">
+          <span className="word">{arr.word}</span>
+          <span className="pronunciation">{hint ? arr.pronunciation : ""}</span>
+          <button
+            onClick={() => {
+              setHint((prev) => !prev);
+            }}
+          >
+            발음 보기
+          </button>
+        </div>
         <div className="answerBox">
           <div className="answerTop">
-            <div className="answer"></div>
-            <div className="answer">답 2</div>
+            <div
+              className={`answer ${
+                classArr[`${ref.current != undefined ? ref.current[0] : ""}`]
+              } ${worng}`}
+              ref={(e) => (props.answerBtn.current[0] = e)}
+              onClick={(e) => {
+                answer(e);
+              }}
+            >
+              {answerArr[`${ref.current != undefined ? ref.current[0] : ""}`]}
+            </div>
+            <div
+              className={`answer ${
+                classArr[`${ref.current != undefined ? ref.current[1] : ""}`]
+              }`}
+              ref={(e) => (props.answerBtn.current[1] = e)}
+              onClick={(e) => {
+                answer(e);
+              }}
+            >
+              {answerArr[`${ref.current != undefined ? ref.current[1] : ""}`]}
+            </div>
           </div>
           <div className="answerBtm">
-            <div className="answer">답 3</div>
-            <div className="answer">답 4</div>
+            <div
+              className={`answer ${
+                classArr[`${ref.current != undefined ? ref.current[2] : ""}`]
+              }`}
+              ref={(e) => (props.answerBtn.current[2] = e)}
+              onClick={(e) => {
+                answer(e);
+              }}
+            >
+              {answerArr[`${ref.current != undefined ? ref.current[2] : ""}`]}
+            </div>
+            <div
+              className={`answer ${
+                classArr[`${ref.current != undefined ? ref.current[3] : ""}`]
+              }`}
+              ref={(e) => (props.answerBtn.current[3] = e)}
+              onClick={(e) => {
+                answer(e);
+              }}
+            >
+              {answerArr[`${ref.current != undefined ? ref.current[3] : ""}`]}
+            </div>
           </div>
         </div>
       </div>
-      <Language pop={pop} setPop={setPop} />
-    </>
+    </Play>
   );
 }
 
