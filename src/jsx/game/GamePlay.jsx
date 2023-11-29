@@ -44,19 +44,19 @@ function GamePlay(props) {
   const classArr = ["mean", "no", "no", "no"];
 
   const answer = (e) => {
-    if (e.target.className.replace("answer ", "") == "mean") {
-      setGood("good");
-      e.target.className = e.target.className + good;
-    } else {
-      setWrong("wrong");
-      e.target.className = e.target.className + worng;
-      props.answerBtn.current.map((x, y) =>
-        x.className.replace("answer ", "") == "mean"
-          ? (x.className = x.className + good)
-          : ""
-      );
-    }
-    setTimeout(() => props.setScore((prev) => (prev = prev + 1)), 1500);
+    // if (e.target.className.replace("answer ", "") == "mean") {
+    //   setGood("good");
+    //   e.target.className = e.target.className + good;
+    // } else {
+    //   setWrong("wrong");
+    //   e.target.className = e.target.className + worng;
+    //   props.answerBtn.current.map((x, y) =>
+    //     x.className.replace("answer ", "") == "mean"
+    //       ? (x.className = x.className + good)
+    //       : ""
+    //   );
+    // }
+    // setTimeout(() => props.setScore((prev) => (prev = prev + 1)), 1500);
   };
 
   return (

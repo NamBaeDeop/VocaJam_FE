@@ -24,7 +24,7 @@ function Game(props) {
           // good={good}
           // setGood={setGood}
           // worng={worng}
-          setWrong={setWrong}
+          // setWrong={setWrong}
         />
       </Main>
       <Footer />
