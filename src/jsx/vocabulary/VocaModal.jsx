@@ -1,37 +1,40 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import '../../css/vocaModal.css';
+// import '../../css/vocaModal.css';
+import {Modal, TitleExit, TopCon, Btns, Btn} from '../../css/VocaModal';
 
 export default function VocaModal(){
 
     const [voca, setVoca] = useState([]);
-
-    const getData=()=>{
-        fetch('./data/dummyChinese.json')
-        .then((res) => res.json())
-        .then((data)=>{
+    
+    const getData = async () => {
+        try {
+            const response = await fetch('./data/dummyChinese.json');
+            const data = await response.json();
             console.log(data);
             setVoca(data);
-        })}
+        } catch (error) {
+            console.error('어 패치 실패했어~', error);
+        }
+    }
 
-      useEffect(()=>{
-        getData()
-      },[])
+    useEffect(() => {
+        getData();
+    }, []);
 
 
     return (
         <>
-            <div className="modal">
-                <div className="title_exit">
-                    {voca ? <div className="top_con word">{voca[0]?.word}</div> : null}
-                    {/* map이나 filter 활용 */}
-                    <div className="top_con exit">X</div>
-                </div>
-                <div className="btns">
-                    <div className="btn">수정</div>
-                    <div className="btn">삭제</div>
-                </div>
-            </div>
+            <Modal>
+                <TitleExit>
+                    {voca ? <TopCon className="word">{voca[0]?.word}</TopCon> : null}
+                    <TopCon className="exit">X</TopCon>
+                </TitleExit>
+                <Btns>
+                    <Btn>수정</Btn>
+                    <Btn>삭제</Btn>
+                </Btns>
+            </Modal>
         </>
     )
 }
