@@ -1,39 +1,17 @@
+import { useContext } from "react";
 import Wrong from "../../css/game/WrongWordStyle";
+import WordCard from "./WordCard";
+import { GameContext } from "./Game";
 function WrongWords() {
+  const { wrongWordArr, wrongWordList, lan } = useContext(GameContext);
+
   return (
-    <Wrong>
+    <Wrong className={wrongWordList ? "" : "remove"}>
       <h2>틀린 단어</h2>
       <ul className="wordList">
-        <li className="word">
-          <span>...</span>
-          <p className="foreignLanguage">学生</p>
-          <p className="pronunciation">がくせい</p>
-          <p className="mean">학생</p>
-        </li>
-        <li className="word">
-          <span>...</span>
-          <p className="foreignLanguage">学生</p>
-          <p className="pronunciation">がくせい</p>
-          <p className="mean">학생</p>
-        </li>
-        <li className="word">
-          <span>...</span>
-          <p className="foreignLanguage">学生</p>
-          <p className="pronunciation">がくせい</p>
-          <p className="mean">학생</p>
-        </li>
-        <li className="word">
-          <span>...</span>
-          <p className="foreignLanguage">学生</p>
-          <p className="pronunciation">がくせい</p>
-          <p className="mean">학생</p>
-        </li>
-        <li className="word">
-          <span>...</span>
-          <p className="foreignLanguage">学生</p>
-          <p className="pronunciation">がくせい</p>
-          <p className="mean">학생</p>
-        </li>
+        {wrongWordArr.current.map((x) => (
+          <WordCard x={x} lan={lan} />
+        ))}
       </ul>
     </Wrong>
   );
