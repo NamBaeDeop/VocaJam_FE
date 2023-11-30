@@ -5,6 +5,7 @@ const Section = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #FAEED6;
 
     & > h1{
         width: 270px;
