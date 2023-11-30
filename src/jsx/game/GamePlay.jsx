@@ -43,20 +43,27 @@ function GamePlay(props) {
   ];
   const classArr = ["mean", "no", "no", "no"];
 
+  if (props.answerBtn.current != "") {
+    for (let i = 0; i < 4; i++) {
+      props.answerBtn.current[i].className = props.answerBtn.current[
+        i
+      ].className.replace(/(good|wrong)/g, "");
+    }
+  }
   const answer = (e) => {
-    // if (e.target.className.replace("answer ", "") == "mean") {
-    //   setGood("good");
-    //   e.target.className = e.target.className + good;
-    // } else {
-    //   setWrong("wrong");
-    //   e.target.className = e.target.className + worng;
-    //   props.answerBtn.current.map((x, y) =>
-    //     x.className.replace("answer ", "") == "mean"
-    //       ? (x.className = x.className + good)
-    //       : ""
-    //   );
-    // }
-    // setTimeout(() => props.setScore((prev) => (prev = prev + 1)), 1500);
+    if (e.target.className.replace(/(answer| )/g, "") == "mean") {
+      // setGood("good");
+      e.target.className = e.target.className + " good";
+    } else {
+      // setWrong("wrong");
+      e.target.className = e.target.className + " wrong";
+      props.answerBtn.current.map((x, y) =>
+        x.className.replace(/(answer| )/g, "") == "mean"
+          ? (x.className = x.className + " good")
+          : ""
+      );
+    }
+    setTimeout(() => props.setScore((prev) => (prev = prev + 1)), 1500);
   };
 
   return (
