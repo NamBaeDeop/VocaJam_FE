@@ -7,9 +7,7 @@ import "./css/wrap.css";
 function App() {
   return (
     <>
-      <Header />
-      <VocaPage />
-      <Footer />
+      <Game />
     </>
   );
 }
