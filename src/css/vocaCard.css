@@ -1,27 +1,27 @@
-.card{
-    width: 250px;
-    height: 90px;
-    background-color: #D4AF9A;
-    border-radius: 20px;
-    padding: 15px;
+.card {
+  width: 250px;
+  height: 90px;
+  background-color: #d4af9a;
+  border-radius: 20px;
+  padding: 15px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:not(:first-child) {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-.card_top{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.card_top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.con{
-    width: 100%;
+.con {
+  width: 100%;
 }
 
 .word{
@@ -29,12 +29,12 @@
     font-weight: 900;
 }
 
-.to_modal{
-    cursor: pointer;
+.to_modal {
+  cursor: pointer;
 }
 
-.pronunciation{
-    font-size: 14px;
+.pronunciation {
+  font-size: 14px;
 }
 
 .meaning{
