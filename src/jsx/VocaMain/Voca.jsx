@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 export default function Voca() {
   const [lang, setLang] = useState();
-  console.log(lang);
 
   return (
     <div className="content">
