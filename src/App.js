@@ -8,10 +8,10 @@ import VocaModal from './jsx/VocaModal/VocaModal';
 function App() {
   return (
     <>
-      {/* <Header/>
+      <Header/>
       <VocaPage/>
-      <Footer/> */}
-      <VocaModal/>
+      <Footer/>
+      {/* <VocaModal/> */}
     </>
   );
 }
