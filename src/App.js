@@ -1,10 +1,6 @@
 import Game from "./jsx/game/Game";
 function App() {
-  return (
-    <>
-      <Game />
-    </>
-  );
+  return <>{/* <Game /> */}</>;
 }
 
 export default App;
