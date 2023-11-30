@@ -1,17 +1,16 @@
-import Header from './Header';
-import Footer from './Footer';
-// import VocaSection from './VocaSection';
+import Header from './jsx/default/Header'
+import Footer from './jsx/default/Footer';
 import VocaPage from './jsx/VocaPage/VocaPage';
 import './css/wrap.css';
 
 
 function App() {
   return (
-    <div id='wrap'>
+    <>
       <Header/>
       <VocaPage/>
       <Footer/>
-    </div>
+    </>
   );
 }
 

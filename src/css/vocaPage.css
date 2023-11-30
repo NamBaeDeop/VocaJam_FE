@@ -1,5 +1,5 @@
 section{
-    margin-top: 246px;
+    margin-top: 26px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,4 +7,10 @@ section{
 
 section h1{
     width: 270px;
+}
+
+footer{
+    width: 360px;
+    /* position: fixed; */
+    /* bottom: 0; */
 }
