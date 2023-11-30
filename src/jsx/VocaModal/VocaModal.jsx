@@ -28,7 +28,6 @@ export default function VocaModal(){
             <Modal>
                 <TitleExit>
                     {voca ? <TopCon className="word">{voca[0]?.word}</TopCon> : null}
-                    {/* map이나 filter 활용 */}
                     <TopCon className="exit">X</TopCon>
                 </TitleExit>
                 <Btns>
