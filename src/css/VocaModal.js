@@ -41,6 +41,7 @@ export const Btns = styled.div`
     width: 100%;
     height: 140px;
     display: flex;
+    
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
