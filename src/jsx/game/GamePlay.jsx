@@ -16,8 +16,8 @@ function GamePlay() {
 
   const fetchFunc = async () => {
     try {
-      // let respons = await fetch(`localhost:8070/game/${lan}`);
-      let respons = await fetch(`../words/${lan}.json`);
+      let respons = await fetch(`localhost:8070/game/${lan}`);
+      // let respons = await fetch(`../words/${lan}.json`);
       let dataArr = await respons.json();
       setArr(dataArr);
     } catch (err) {
