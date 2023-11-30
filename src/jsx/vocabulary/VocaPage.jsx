@@ -1,15 +1,23 @@
 import React from "react";
-import VocaCard from "./VocaCard";
-import Section from "../../css/Vocapage";
+// import { useState, useEffect } from "react";
 
-export default function VocaPage() {
-  return (
-    <>
-      <Section>
-        <h1>일본어</h1>
-        <VocaCard />
-        {/* map으로 반복 */}
-      </Section>
-    </>
-  );
+import Header from '../default/Header'
+import Footer from '../default/Footer';
+import VocaCard from "../vocabulary/VocaCard";
+import Main from "../../css/Vocapage";
+
+export default function VocaPage(){
+    // const [lang, setLang] = useState("EN");
+
+
+    return (
+        <>
+            <Header/>
+            <Main>
+                <h1>일본어</h1>
+                <VocaCard />
+            </Main>
+            <Footer/>
+        </>
+    )
 }

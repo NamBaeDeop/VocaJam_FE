@@ -1,4 +1,4 @@
-import VocaPage from './jsx/VocaPage/VocaPage';
+import VocaPage from './jsx/vocabulary/VocaPage';
 // import Game from "./jsx/game/Game";
 
 
