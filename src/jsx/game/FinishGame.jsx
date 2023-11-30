@@ -26,7 +26,7 @@ function FinishGame() {
             setScore(0);
           }}
         >
-          재시작
+          {/* 재시작 */}
         </div>
       </div>
     </Finish>
