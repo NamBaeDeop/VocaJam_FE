@@ -16,8 +16,8 @@ function GamePlay() {
 
   const fetchFunc = async () => {
     try {
-      let respons = await fetch(`localhost:8070/game/${lan}`);
-      // let respons = await fetch(`../words/${lan}.json`);
+      // let respons = await fetch(`localhost:8070/game/${lan}`);
+      let respons = await fetch(`../words/${lan}.json`);
       let dataArr = await respons.json();
       setArr(dataArr);
     } catch (err) {
@@ -72,7 +72,7 @@ function GamePlay() {
   };
 
   return (
-    <Play className={score == 10 ? "remove" : ""}>
+    <Play className={score == 1 ? "remove" : ""}>
       <Language pop={pop} setPop={setPop} setLan={setLan} />
       <div className="gameHeader">
         <FaGlobeAsia
