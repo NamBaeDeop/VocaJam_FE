@@ -26,7 +26,7 @@
 
 .word{
     font-size: 24px;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .to_modal{
@@ -39,4 +39,8 @@
 
 .meaning{
     font-size: 20px;
+}
+
+.remove{
+    display: none;
 }

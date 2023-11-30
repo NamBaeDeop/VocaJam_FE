@@ -4,6 +4,7 @@ import '../../css/vocaCard.css';
 
 export default function VocaCard(){
     // const [voca, setVoca] = useState([]);
+    const [lang, setLang] = useState("EN");
 
     // const getData=()=>{
     //     fetch('./data/dummyChinese.json')
@@ -21,7 +22,7 @@ export default function VocaCard(){
     
         const getData = async () => {
             try {
-                const response = await fetch('./data/dummyChinese.json');
+                const response = await fetch('./data/dummyEnglish.json');
                 const data = await response.json();
                 console.log(data);
                 setVoca(data);
@@ -50,9 +51,11 @@ export default function VocaCard(){
                             <div className="card" key={item.id}>
                                 <div className="con card_top">
                                     <span className="word">{item.word}</span>
-                                    <span className="word to_modal">&middot;&middot;&middot;</span>
+                                    <span className="word to_modal" onClick={(e)=> {
+                                        console.log(e.target.parentNode);
+                                    }}>&middot;&middot;&middot;</span>
                                 </div>
-                                <span className="con pronunciation">&#91;{item.pronunciation}&#93;</span>
+                                <span className={`con pronounciation ${lang === "EN"? "remove":""}`}>{item.pronunciation}</span>
                                 <span className="con meaning">{item.meaning}</span>
                             </div>
                         ))}

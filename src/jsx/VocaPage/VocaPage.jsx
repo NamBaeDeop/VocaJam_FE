@@ -5,7 +5,6 @@ import VocaCard from "../VocaCard/VocaCard";
 import Main from "../../css/Vocapage";
 
 export default function VocaPage(){
-
     return (
         <>
             <Header/>
