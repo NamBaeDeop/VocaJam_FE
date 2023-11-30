@@ -7,7 +7,7 @@ export default function Add() {
   const [mean, setMean] = useState("");
   const [pron, setPron] = useState("");
   const [explan, setExplan] = useState("");
-  const [lang, setLang] = useState();
+  // const [lang, setLang] = useState();
   return (
     <div>
       <Header />
