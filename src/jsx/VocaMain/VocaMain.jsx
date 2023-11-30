@@ -1,9 +1,15 @@
 import React from "react";
+import Header from "../default/Header";
+import Footer from "../default/Footer";
+import Voca from "../VocaMain/Voca";
+import "../../css/vocaMain.css";
 
 export default function VocaMain() {
   return (
-    <div>
-      <h1>언어를 선택</h1>
-    </div>
+    <>
+      <Header />
+      <Voca />
+      <Footer />
+    </>
   );
 }
