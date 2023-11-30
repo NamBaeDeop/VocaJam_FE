@@ -8,9 +8,10 @@ export const Modal = styled.div`
     border: 4px solid #C77D7D;
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 250px;
-    left: 182px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 `
 export const TitleExit= styled.div`
     width: 100%;
