@@ -2,27 +2,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import '../../css/vocaCard.css';
 
-export default function VocaCard(){
-    // const [voca, setVoca] = useState([]);
-    const [lang, setLang] = useState("EN");
-
-    // const getData=()=>{
-    //     fetch('./data/dummyChinese.json')
-    //     .then((res) => res.json())
-    //     .then((data)=>{
-    //         console.log(data);
-    //         setVoca(data);
-    //     })}
-
-    //   useEffect(()=>{
-    //     getData()
-    //   },[])
+export default function VocaCard(lang){
 
         const [voca, setVoca] = useState([]);
-    
+        const langValue = lang.lang;
+
         const getData = async () => {
             try {
-                const response = await fetch('./data/dummyEnglish.json');
+                const response = await fetch(`./data/dummy${langValue}.json`);
                 const data = await response.json();
                 console.log(data);
                 setVoca(data);
@@ -33,7 +20,8 @@ export default function VocaCard(){
     
         useEffect(() => {
             getData();
-        }, []);
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [langValue]);
 
     return (
         <>
