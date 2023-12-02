@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 // import '../../css/vocaModal.css';
 import {Modal, TitleExit, TopCon, Btns, Btn} from '../../css/VocaModal';
 
-export default function VocaModal(){
+export default function VocaModal(lang){
 
     const [voca, setVoca] = useState([]);
     
