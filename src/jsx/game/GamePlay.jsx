@@ -1,7 +1,7 @@
 import { FaGlobeAsia } from "react-icons/fa";
 import Language from "./Language";
 import { useContext, useEffect, useRef, useState } from "react";
-import Play from "../../css/game/Play";
+import Play from "../../css/game/PlayStyle";
 import { GameContext } from "./Game";
 
 function GamePlay() {
@@ -17,8 +17,8 @@ function GamePlay() {
   const fetchFunc = async () => {
     try {
       // let respons = await fetch(`localhost:8070/game/${lan}`);
-      let respons = await fetch(`../words/${lan}.json`);
-      let dataArr = await respons.json();
+      let response = await fetch(`../words/${lan}.json`);
+      let dataArr = await response.json();
       setArr(dataArr);
     } catch (err) {
       console.log("err", err);
