@@ -13,9 +13,6 @@ export default function VocaPage({lang}){
         <>
             <Header/>
             <Main>
-                {/* <h1>{lang === "English" ? <span>영어</span> : null }</h1>
-                <h1>{lang === "Chinese" ? <span>중국어</span> : null}</h1>
-                <h1>{lang === "Japanese" ? <span>일본어</span> : null}</h1> */}
                 {lang === "English" && <h1>영어</h1>}
                 {lang === "Chinese" && <h1>중국어</h1>}
                 {lang === "Japanese" && <h1>일본어</h1>}
