@@ -15,10 +15,14 @@ function Search() {
 
   const fetchFunc = async (e) => {
     try {
-      // let response = await fetch(`localhost:8070/search/${lan}?Search_Word=${e.targte.value}`);
-      let reponse = await fetch(`../words/search${lan}.json`);
-      let dataArr = await reponse.json();
-      setSearchResult(dataArr);
+      let response = await fetch(
+        `localhost:8070/search/${lan}?Search_Word=${e.targte.value}`
+      );
+      // console.log(e.target.value);
+      // console.log(`localhost:8070/search/${lan}?Search_Word=${e.target.value}`);
+      // let response = await fetch(`../words/search${lan}.json`);
+      // let dataArr = await response.json();
+      // setSearchResult(dataArr);
     } catch (err) {
       console.log("err", err);
     }
