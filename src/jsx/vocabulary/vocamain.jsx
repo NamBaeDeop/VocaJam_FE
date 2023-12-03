@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
-import vocaMain, { Btn, H1, Main } from "../../css/vocaMain";
+import { Btn, H1, Main } from "../../css/vocaMain";
 import VocaPage from "./VocaPage";
 
-export default function Voca() {
+export default function VocaMain() {
   const [lang, setLang] = useState(null);
 
   return (

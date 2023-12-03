@@ -1,9 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {Modal, TitleExit, TopCon, Btns, Btn} from '../../css/VocaModal';
 export default function VocaModal( { lang, clickedWord, word, onClose, onDelete } ){
 
-    const [id] = useState(word.id);
+    // const [id, setId] = useState(word.id);
 
     console.log(word, "vocamodal");
     console.log(lang, "lang in vocamodal");

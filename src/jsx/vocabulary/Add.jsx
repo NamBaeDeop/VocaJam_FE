@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Header from "../default/Header";
-import Footer from "../default/Footer";
 import styled from "styled-components";
 import {
   AddForm,
@@ -43,7 +41,6 @@ export default function Add({ lang }) {
   };
   return (
     <div>
-      <Header />
       <AddForm>
         <WordBox>
           <AddWord>단어</AddWord>
@@ -94,7 +91,6 @@ export default function Add({ lang }) {
           <AddBtn onClick={handleAddClick}>추가</AddBtn>
         </AddBox>
       </AddForm>
-      <Footer />
     </div>
   );
 }

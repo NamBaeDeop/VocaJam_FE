@@ -4,7 +4,7 @@ import VocaModal from "./VocaModal";
 import Card from "../../css/VocaCard";
 
 
-export default function VocaCard(lang, data){
+export default function VocaCard(lang){
 
         const [voca, setVoca] = useState([]);
         const langValue = lang.lang;
