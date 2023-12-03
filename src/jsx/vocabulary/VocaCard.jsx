@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import '../../css/vocaCard.css';
 import VocaModal from "./VocaModal";
+import Card from "../../css/VocaCard";
+
 
 export default function VocaCard(lang, data){
 
@@ -51,7 +52,7 @@ export default function VocaCard(lang, data){
             {voca.length > 0 ? (
                 <>
                     {voca.map((item) => (
-                        <div className="card" key={item.id}>
+                        <Card className="card" key={item.id}>
                             <div className="con card_top">
                                 <span className="word">{item.word}</span>
                                 <span className="word to_modal" onClick={()=> {
@@ -61,7 +62,7 @@ export default function VocaCard(lang, data){
                             </div>
                             <span className={`con pronounciation ${lang === "EN"? "remove":""}`}>{item.pronunciation}</span>
                             <span className="con meaning">{item.meaning}</span>
-                        </div>
+                        </Card>
                     ))}
                 </>
             ) : (
