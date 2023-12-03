@@ -10,7 +10,7 @@ export default function VocaCard(lang, data){
         const langValue = lang.lang;
         console.log(lang, langValue);
 
-        const [modalWord, setModalWord] = useState(null); // State to hold the word for the modal
+        const [modalWord, setModalWord] = useState(null);
         const [showModal, setShowModal] = useState(false);
 
         const getData = async () => {

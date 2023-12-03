@@ -11,14 +11,14 @@ export default function VocaPage({lang}){
 
     return (
         <>
-            <Header/>
+            {/* <Header/> */}
             <Main>
-                {lang === "English" && <h1>영어</h1>}
-                {lang === "Chinese" && <h1>중국어</h1>}
-                {lang === "Japanese" && <h1>일본어</h1>}
+                {lang === "EN" && <h1>영어</h1>}
+                {lang === "CN" && <h1>중국어</h1>}
+                {lang === "JP" && <h1>일본어</h1>}
                 <VocaCard lang={lang}/>
             </Main>
-            <Footer/>
+            {/* <Footer/> */}
         </>
     )
 }
