@@ -1,11 +1,10 @@
 import React from "react";
-// import { useState, useEffect } from "react";
-// import '../../css/vocaModal.css';
+import { useState, useEffect } from "react";
 import {Modal, TitleExit, TopCon, Btns, Btn} from '../../css/VocaModal';
-
 export default function VocaModal( { lang, clickedWord, word, onClose, onDelete } ){
 
-    // const [voca, setVoca] = useState([]);
+    const [id] = useState(word.id);
+
     console.log(word, "vocamodal");
     console.log(lang, "lang in vocamodal");
     console.log(`localhost:8070/words/${lang.lang}/${word.id}`);
@@ -14,6 +13,7 @@ export default function VocaModal( { lang, clickedWord, word, onClose, onDelete 
         console.log(word.id);
     }
 
+    
     const handleDelete = async () => {
         try {
             await fetch(`localhost:8070/words/${lang.lang}/${word.id}`, {

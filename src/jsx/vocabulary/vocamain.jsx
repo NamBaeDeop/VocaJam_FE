@@ -41,8 +41,8 @@ export default function Voca() {
         </Btn>
       </Main>
       )}
-      <Footer />
       {lang && <VocaPage lang={lang} />}
+      <Footer />
     </>
   );
 }
