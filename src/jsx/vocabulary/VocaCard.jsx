@@ -9,12 +9,9 @@ export default function VocaCard(props) {
   const langValue = props.lang;
   const [showModal, setShowModal] = useState(false);
 
-  //   console.log(props.lang);
-  console.log("card", props.lang);
-  //   console.log(props.setModalWord);
   const getData = async () => {
     try {
-      const response = await fetch(`./data/dummy${props.lang}.json`);
+      const response = await fetch(`localhost:8070/words/${props.lang}`);
       const data = await response.json();
       setVoca(data);
     } catch (error) {

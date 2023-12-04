@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import Div from "../../css/vocaEdit";
+
+import Div from "../../css/VocaEdit";
 export default function Edit(props) {
   console.log("edit", props.lang);
   const [ex, setEx] = useState({

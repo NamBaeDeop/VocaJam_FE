@@ -1,21 +1,18 @@
 import React, { useState } from "react";
-import Header from "../default/Header";
-import Footer from "../default/Footer";
-import { Btn, H1, Main } from "../../css/vocaMain";
 import VocaPage from "./VocaPage";
+import Main from "../../css/VocaMain";
 
 export default function VocaMain() {
   const [lang, setLang] = useState(null);
 
   return (
     <>
-      <Header />
       {!lang && (
-        <Main>
-          <H1>언어를 선택해주세요</H1>
-          <Btn>
+        <Main className="Main">
+          <h1>언어를 선택해주세요</h1>
+          <div className="btnBox">
             <button
-              className="EN"
+              className="en"
               onClick={(e) => {
                 setLang(e.target.className);
               }}
@@ -23,7 +20,7 @@ export default function VocaMain() {
               영어
             </button>
             <button
-              className="CN"
+              className="cn"
               onClick={(e) => {
                 setLang(e.target.className);
               }}
@@ -31,18 +28,17 @@ export default function VocaMain() {
               중국어
             </button>
             <button
-              className="JP"
+              className="jp"
               onClick={(e) => {
                 setLang(e.target.className);
               }}
             >
               일본어
             </button>
-          </Btn>
+          </div>
         </Main>
       )}
       {lang && <VocaPage lang={lang} />}
-      <Footer />
     </>
   );
 }

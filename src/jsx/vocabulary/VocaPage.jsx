@@ -12,9 +12,6 @@ export default function VocaPage(props) {
     <>
       {!clicked && (
         <Main
-          // className={`${props.editMode ? "remove " : ""} ${
-          //   props.pop ? "" : "remove"
-          // }`}
           className={`${props.editMode ? "remove" : ""} ${
             props.pop ? "" : "remove"
           }`}
