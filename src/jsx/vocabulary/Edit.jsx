@@ -1,20 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {
-  EditBox,
-  EditBtn,
-  EditForm,
-  EditMean,
-  EditPron,
-  EditWord,
-  MeanBox,
-  Meaning,
-  PronBox,
-  Pronunciation,
-  Word,
-  WordBox,
-} from "../../css/VocaEdit";
-
+import Div from "../../css/vocaEdit";
 export default function Edit(props) {
   console.log("edit", props.lang);
   const [ex, setEx] = useState({
@@ -37,11 +23,12 @@ export default function Edit(props) {
     }
   };
   return (
-    <div className={props.editMode ? "" : "remove"}>
-      <EditForm>
-        <WordBox>
-          <EditWord>단어</EditWord>
-          <Word
+    <Div className={props.editMode ? "" : "remove"}>
+      <div className="EditForm">
+        <div className="WordBox">
+          <p className="EditWord">단어</p>
+          <input
+            className="Word"
             type="text"
             onChange={(e) => {
               // console.log(e.target.value);
@@ -54,10 +41,11 @@ export default function Edit(props) {
             }}
             defaultValue={props.word != null ? props.word.word : ""}
           />
-        </WordBox>
-        <MeanBox>
-          <EditMean>의미</EditMean>
-          <Meaning
+        </div>
+        <div className="MeanBox">
+          <p className="EditMean">의미</p>
+          <input
+            className="Meaning"
             type="text"
             onChange={(e) => {
               // console.log(e.target.value);
@@ -70,11 +58,12 @@ export default function Edit(props) {
             }}
             defaultValue={props.word != null ? props.word.meaning : ""}
           />
-        </MeanBox>
+        </div>
         {props.lang !== "en" && (
-          <PronBox>
-            <EditPron>발음</EditPron>
-            <Pronunciation
+          <div className="PronBox">
+            <p className="EditPron">발음</p>
+            <input
+              className="Pronunciation"
               type="text"
               onChange={(e) => {
                 // console.log(e.target.value);
@@ -87,12 +76,14 @@ export default function Edit(props) {
               }}
               defaultValue={props.word != null ? props.word.pronunciation : ""}
             />
-          </PronBox>
+          </div>
         )}
-        <EditBox>
-          <EditBtn onClick={handleEditClick}>수정</EditBtn>
-        </EditBox>
-      </EditForm>
-    </div>
+        <div className="EditBox">
+          <button className="EditBtn" onClick={handleEditClick}>
+            수정
+          </button>
+        </div>
+      </div>
+    </Div>
   );
 }
