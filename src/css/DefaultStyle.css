@@ -25,7 +25,7 @@ header {
   align-items: center;
   /* position: relative; */
   background-color: #faeed6;
-  background-image: url(img/header.png);
+  background-image: url(http:localhost:8070/img/header.png);
 }
 
 .logo {
