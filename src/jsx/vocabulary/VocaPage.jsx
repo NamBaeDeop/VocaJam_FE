@@ -6,14 +6,14 @@ import {Main, GotoAdd, TitleBtnWrap} from "../../css/Vocapage";
 import Add from "./Add";
 
 export default function VocaPage({lang}){
-    console.log(lang, "VocaPage");
+    // console.log(lang, "VocaPage");
     const [clicked, setClicked] = useState();    
     const [editMode, setEditMode] = useState(false);
         // console.log(setEditMode);
     return (
         <>
         {!clicked && (
-            <Main className="remove">
+            <Main>
                 <div className="TitleBtnWrap">
                     {lang === "EN" && <h1>영어</h1>}
                     {lang === "CN" && <h1>중국어</h1>}

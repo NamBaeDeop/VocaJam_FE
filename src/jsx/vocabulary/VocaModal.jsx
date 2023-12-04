@@ -51,7 +51,7 @@ export default function VocaModal( { lang, clickedWord, word, onClose, onDelete,
                 </Btns>
             </Modal>
             {/* )} */}
-            {editMode? <Edit word={word} />: ""}
+            {/* {editMode? <Edit word={word} />: ""} */}
          {/* {editMode && <EditForm word={word} />} */}
            
         </>

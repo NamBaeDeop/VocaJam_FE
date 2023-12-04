@@ -2,13 +2,14 @@ import React from "react";
 import { useState, useEffect } from "react";
 import VocaModal from "./VocaModal";
 import Card from "../../css/VocaCard";
+import Edit from "./Edit";
 
 
 export default function VocaCard(props){
-    // console.log(props.lang);
+    console.log(props.editMode);
         const [voca, setVoca] = useState([]);
         const langValue = props.lang;
-        console.log(props.lang, langValue);
+        // console.log(props.lang, langValue);
 
         const [modalWord, setModalWord] = useState(null);
         const [showModal, setShowModal] = useState(false);
@@ -69,6 +70,14 @@ export default function VocaCard(props){
                 <span>Loading...</span> */}
             {/* )} */}
               {showModal && <VocaModal lang={props.lang} word={modalWord} onClose={closeModal} editMode={props.editMode} setEditMode={props.setEditMode} />}
+              
+            {/* <Edit className={props.editMode? "absolute ":"remove" } word={props.word} editMode={props.editMode} setEditMode={props.setEditMode} /> */}
+            <Edit
+                className={props.editMode ? "absolute" : "remove"}
+                word={props.word}
+                editMode={props.editMode}
+                setEditMode={props.setEditMode}
+/>
         </>
     )
 }

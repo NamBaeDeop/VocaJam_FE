@@ -16,7 +16,7 @@ import {
 } from "../../css/VocaEdit";
 
 export default function Edit({ lang }) {
-  console.log(lang);
+  // console.log(lang);
   const [ex, setEx] = useState({
     id: "",
     word: "",
@@ -34,7 +34,7 @@ export default function Edit({ lang }) {
     }
   };
   return (
-    <div>
+    <main className="editMain">
       <EditForm>
         <WordBox>
           <EditWord>단어</EditWord>
@@ -87,6 +87,6 @@ export default function Edit({ lang }) {
           <EditBtn onClick={handleEditClick}>수정</EditBtn>
         </EditBox>
       </EditForm>
-    </div>
+    </main>
   );
 }

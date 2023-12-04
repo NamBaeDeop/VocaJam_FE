@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
+
 export const EditForm = styled.div`
   background-color: #faeed6;
-`;
+
+  .absolute{
+    position: absolute;
+  }
+  . remove {
+    display: none;
+  }
+  `;
 
 export const WordBox = styled.div`
   display: flex;

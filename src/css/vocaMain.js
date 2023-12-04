@@ -6,6 +6,10 @@ export const Main = styled.div`
   height: 513px;
   display: flex;
   flex-direction: column;
+
+  .remove{
+    display: none !important;
+  }
 `;
 
 export const H1 = styled.div`
