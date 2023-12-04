@@ -1,8 +1,8 @@
 import React from "react";
-import { useState } from "react";
-import { Modal, TitleExit, TopCon, Btns, Btn } from "../../css/VocaModal";
+// import { useState } from "react";
+import { Modal } from "../../css/VocaModal";
 // import { EditForm } from "../../css/VocaEdit";
-import Edit from "./Edit";
+// import Edit from "./Edit";
 export default function VocaModal({
   lang,
   clickedWord,
@@ -18,10 +18,6 @@ export default function VocaModal({
   // console.log(word, "vocamodal");
   // console.log(lang, "lang in vocamodal");
   // console.log(`localhost:8070/words/${lang.lang}/${word.id}`);
-
-  const sendId = function () {
-    // console.log(word.id);
-  };
 
   const handleEditClick = () => {
     setEditMode(true);
@@ -47,10 +43,10 @@ export default function VocaModal({
     <>
       {/* {!editMode && ( */}
       <Modal>
-        <TitleExit>
-          <TopCon className="word">{word.word}</TopCon>
-          <TopCon
-            className="exit"
+        <div className="TitleExit">
+          <div className="TopCon word">{word.word}</div>
+          <div
+            className="TopCon exit"
             onClick={(e) => {
               // console.log("모달창 껐어용");
               //   onClose();
@@ -58,12 +54,12 @@ export default function VocaModal({
             }}
           >
             X
-          </TopCon>
-        </TitleExit>
-        <Btns>
-          <Btn onClick={handleEditClick}>수정</Btn>
-          <Btn onClick={handleDelete}>삭제</Btn>
-        </Btns>
+          </div>
+        </div>
+        <div className="Btns">
+          <div className="Btn" onClick={handleEditClick}>수정</div>
+          <div className="Btn" onClick={handleDelete}>삭제</div>
+        </div>
       </Modal>
     </>
   );

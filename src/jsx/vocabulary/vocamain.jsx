@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
-// import { Btn, H1, Main } from "../../css/vocaMain";
 import Main from "../../css/VocaMain";
 import VocaPage from "./VocaPage";
 import Edit from "./Edit";
 import { useNavigate } from "react-router-dom";
 
 export default function VocaMain(props) {
-  navigate = useNavigate();
+  let navigate = useNavigate();
 
   const Language = (e) => {
     props.setLang(e.target.className);
