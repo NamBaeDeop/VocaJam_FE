@@ -65,7 +65,7 @@ export default function Add({ lang }) {
             }}
           ></Meaning>
         </MeanBox>
-        {lang !== "EN" && (
+        {lang !== "en" && (
           <PronBox>
             <AddPron>발음</AddPron>
             <Pronunciation

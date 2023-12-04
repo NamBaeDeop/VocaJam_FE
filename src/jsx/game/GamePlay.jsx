@@ -55,7 +55,6 @@ function GamePlay() {
     arr.otherMeaning3,
   ];
   const classArr = ["mean", "no", "no", "no"];
-
   const answer = (e) => {
     if (e.target.className.replace(/(answer| )/g, "") == "mean") {
       e.target.className = e.target.className + " good";
@@ -72,7 +71,7 @@ function GamePlay() {
   };
 
   return (
-    <Play className={score == 1 ? "remove" : ""}>
+    <Play className={score == 10 ? "remove" : ""}>
       <Language pop={pop} setPop={setPop} setLan={setLan} />
       <div className="gameHeader">
         <FaGlobeAsia
@@ -88,7 +87,7 @@ function GamePlay() {
           <span className="word">{arr.word}</span>
           <span className="pronunciation">{hint ? arr.pronunciation : ""}</span>
           <button
-            className={lan != "EN" ? "" : "remove"}
+            className={lan != "en" ? "" : "remove"}
             onClick={() => {
               setHint((prev) => !prev);
             }}

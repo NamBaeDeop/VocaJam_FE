@@ -15,18 +15,21 @@ import {
   WordBox,
 } from "../../css/VocaEdit";
 
-export default function Edit({ lang }) {
-  // console.log(lang);
+export default function Edit(props) {
+  console.log("edit", props.lang);
   const [ex, setEx] = useState({
     id: "",
     word: "",
     meaning: "",
     pronunciation: "",
   });
+  console.log(ex);
   const [voca, setVoca] = useState(0); // 사랑이가 id 값을 넘겨줘야함. 수정할 때는 선택된 단어의 id 값을 state로 받아서 id 값에 넣어줘야함 이 부분을 얘기하면서 해야함 -> state 값을 사랑이가 넘겨주기 때문에
   const handleEditClick = async () => {
     try {
-      const response = await fetch(`localhost:8070/words/{lang}/{id}`);
+      const response = await fetch(
+        `localhost:8070/words/${props.lang}/${props.word.id}`
+      );
       const data = await response.json();
       setEx(data);
     } catch (error) {
@@ -34,59 +37,62 @@ export default function Edit({ lang }) {
     }
   };
   return (
-    <main className="editMain">
+    <div className={props.editMode ? "" : "remove"}>
       <EditForm>
         <WordBox>
           <EditWord>단어</EditWord>
           <Word
             type="text"
             onChange={(e) => {
-              console.log(e.target.value);
+              // console.log(e.target.value);
               setEx((prev) => {
                 let temp = prev;
                 temp.word = e.target.value;
-                console.log(temp);
+                // console.log(temp);
                 return temp;
               });
             }}
-          ></Word>
+            defaultValue={props.word != null ? props.word.word : ""}
+          />
         </WordBox>
         <MeanBox>
           <EditMean>의미</EditMean>
           <Meaning
             type="text"
             onChange={(e) => {
-              console.log(e.target.value);
+              // console.log(e.target.value);
               setEx((prev) => {
                 let temp = prev;
                 temp.meaning = e.target.value;
-                console.log(temp);
+                // console.log(temp);
                 return temp;
               });
             }}
-          ></Meaning>
+            defaultValue={props.word != null ? props.word.meaning : ""}
+          />
         </MeanBox>
-        {lang !== "EN" && (
+        {props.lang !== "en" && (
           <PronBox>
             <EditPron>발음</EditPron>
             <Pronunciation
               type="text"
               onChange={(e) => {
-                console.log(e.target.value);
+                // console.log(e.target.value);
                 setEx((prev) => {
                   let temp = prev;
                   temp.pronunciation = e.target.value;
-                  console.log(temp);
+                  // console.log(temp);
                   return temp;
                 });
               }}
-            ></Pronunciation>
+              defaultValue={props.word != null ? props.word.pronunciation : ""}
+            />
           </PronBox>
         )}
         <EditBox>
           <EditBtn onClick={handleEditClick}>수정</EditBtn>
         </EditBox>
       </EditForm>
-    </main>
+    </div>
   );
 }

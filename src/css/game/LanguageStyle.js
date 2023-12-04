@@ -43,6 +43,7 @@ const LanguageBox = styled.div`
     justify-content: center;
     align-items: center;
     background-color: white;
+    cursor: pointer;
   }
 `;
 export default LanguageBox;
