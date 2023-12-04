@@ -4,11 +4,11 @@ import VocaModal from "./VocaModal";
 import Card from "../../css/VocaCard";
 
 
-export default function VocaCard(lang){
-
+export default function VocaCard(props){
+    // console.log(props.lang);
         const [voca, setVoca] = useState([]);
-        const langValue = lang.lang;
-        console.log(lang, langValue);
+        const langValue = props.lang;
+        console.log(props.lang, langValue);
 
         const [modalWord, setModalWord] = useState(null);
         const [showModal, setShowModal] = useState(false);
@@ -49,8 +49,8 @@ export default function VocaCard(lang){
 
     return (
         <>
-            {voca.length > 0 ? (
-                <>
+            {/* {voca.length > 0 ? ( */}
+                 {/* <> */}
                     {voca.map((item) => (
                         <Card className="card" key={item.id}>
                             <div className="con card_top">
@@ -60,15 +60,15 @@ export default function VocaCard(lang){
                                     // console.log(voca[item.id-1]);
                                 }}>&middot;&middot;&middot;</span>
                             </div>
-                            <span className={`con pronounciation ${lang === "EN"? "remove":""}`}>{item.pronunciation}</span>
+                            <span className={`con pronounciation ${props.lang === "EN"? "remove":""}`}>{item.pronunciation}</span>
                             <span className="con meaning">{item.meaning}</span>
                         </Card>
                     ))}
-                </>
-            ) : (
-                <span>Loading...</span>
-            )}
-              {showModal && <VocaModal lang={lang} word={modalWord} onClose={closeModal} />}
+                 {/* </> */}
+            {/* ) : (
+                <span>Loading...</span> */}
+            {/* )} */}
+              {showModal && <VocaModal lang={props.lang} word={modalWord} onClose={closeModal} editMode={props.editMode} setEditMode={props.setEditMode} />}
         </>
     )
 }

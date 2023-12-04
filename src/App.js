@@ -2,7 +2,6 @@
 import VocaMain from './jsx/vocabulary/VocaMain';
 
 function App() {
-  // const [Language, setLanguage] = useState([]);
   return (
     <>
       <VocaMain/>

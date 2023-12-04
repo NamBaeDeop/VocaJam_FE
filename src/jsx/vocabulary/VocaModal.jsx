@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import {Modal, TitleExit, TopCon, Btns, Btn} from '../../css/VocaModal';
-export default function VocaModal( { lang, clickedWord, word, onClose, onDelete } ){
-
-    // const [id, setId] = useState(word.id);
+// import { EditForm } from "../../css/VocaEdit";
+import Edit from "./Edit";
+export default function VocaModal( { lang, clickedWord, word, onClose, onDelete, editMode, setEditMode} ){
 
     console.log(word, "vocamodal");
     console.log(lang, "lang in vocamodal");
@@ -13,6 +13,11 @@ export default function VocaModal( { lang, clickedWord, word, onClose, onDelete 
         console.log(word.id);
     }
 
+
+
+    const handleEditClick = () => {
+        setEditMode(true);
+    }
     
     const handleDelete = async () => {
         try {
@@ -30,6 +35,7 @@ export default function VocaModal( { lang, clickedWord, word, onClose, onDelete 
 
     return (
         <>
+        {/* {!editMode && ( */}
             <Modal>
                 <TitleExit>
                     <TopCon className="word">{word.word}</TopCon>
@@ -40,10 +46,14 @@ export default function VocaModal( { lang, clickedWord, word, onClose, onDelete 
                     >X</TopCon>
                 </TitleExit>
                 <Btns>
-                    <Btn onClick={sendId}>수정</Btn>
+                    <Btn onClick={handleEditClick}>수정</Btn>
                     <Btn onClick={handleDelete}>삭제</Btn>
                 </Btns>
             </Modal>
+            {/* )} */}
+            {editMode? <Edit word={word} />: ""}
+         {/* {editMode && <EditForm word={word} />} */}
+           
         </>
     )
 }
