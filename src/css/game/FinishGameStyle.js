@@ -39,6 +39,7 @@ const Finish = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #966846;
+    cursor: pointer;
   }
 `;
 export default Finish;

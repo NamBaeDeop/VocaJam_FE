@@ -11,7 +11,7 @@ function Language(props) {
       </span>
       <div className="languageBox">
         <p
-          className="EN"
+          className="en"
           onClick={(e) => {
             props.setLan(e.target.className);
             props.setPop("remove");
@@ -20,22 +20,22 @@ function Language(props) {
           영어
         </p>
         <p
-          className="JP"
-          onClick={(e) => {
-            props.setLan(e.target.className);
-            props.setPop("remove");
-          }}
-        >
-          일본어
-        </p>
-        <p
-          className="CN"
+          className="cn"
           onClick={(e) => {
             props.setLan(e.target.className);
             props.setPop("remove");
           }}
         >
           중국어
+        </p>
+        <p
+          className="jp"
+          onClick={(e) => {
+            props.setLan(e.target.className);
+            props.setPop("remove");
+          }}
+        >
+          일본어
         </p>
       </div>
     </LanguageBox>

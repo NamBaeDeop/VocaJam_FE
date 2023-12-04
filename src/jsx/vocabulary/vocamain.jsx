@@ -1,48 +1,48 @@
 import React, { useState } from "react";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
-import { Btn, H1, Main } from "../../css/vocaMain";
+// import { Btn, H1, Main } from "../../css/vocaMain";
+import Main from "../../css/VocaMain";
 import VocaPage from "./VocaPage";
+import Edit from "./Edit";
+import { useNavigate } from "react-router-dom";
 
-export default function VocaMain() {
-  const [lang, setLang] = useState(null);
+export default function VocaMain(props) {
+  navigate = useNavigate();
 
+  const Language = (e) => {
+    props.setLang(e.target.className);
+    props.setPop(true);
+    navigate("/voca");
+  };
   return (
     <>
-      <Header />
-      {!lang && (
-      <Main>
-        <H1>언어를 선택해주세요</H1>
-        <Btn>
-          <button
-            className="EN"
-            onClick={(e) => {
-              setLang(e.target.className);
-            }}
-          >
+      <Main className={props.pop ? "remove" : ""}>
+        <h1>언어를 선택해주세요</h1>
+        <div className="btnBox">
+          <button className="en" onClick={(e) => {}}>
             영어
           </button>
           <button
-            className="CN"
+            className="cn"
             onClick={(e) => {
-              setLang(e.target.className);
+              props.setLang(e.target.className);
+              props.setPop(true);
             }}
           >
             중국어
           </button>
           <button
-            className="JP"
+            className="jp"
             onClick={(e) => {
-              setLang(e.target.className);
+              props.setLang(e.target.className);
+              props.setPop(true);
             }}
           >
             일본어
           </button>
-        </Btn>
+        </div>
       </Main>
-      )}
-      {lang && <VocaPage lang={lang} />}
-      <Footer />
     </>
   );
 }

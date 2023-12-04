@@ -18,8 +18,8 @@ const Play = styled.div`
   .globe {
     font-size: 30px;
     position: relative;
-    top: 1.5vh;
-    right: 10vw;
+    top: 20px;
+    right: 145px;
     cursor: pointer;
   }
   .progress {
@@ -56,8 +56,8 @@ const Play = styled.div`
     color: #f7e7db;
     outline: none;
     position: absolute;
-    top: 15.5vh;
-    left: 0.8vw;
+    top: 105px;
+    left: 12px;
     background-color: #a97362;
   }
   .pronunciation {
@@ -89,11 +89,16 @@ const Play = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #d4af9a;
+    cursor: pointer;
   }
   .good {
+    width: 43%;
+    height: 98%;
     border: 3px solid green;
   }
   .wrong {
+    width: 43%;
+    height: 98%;
     border: 3px solid red;
   }
 `;

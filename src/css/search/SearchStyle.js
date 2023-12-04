@@ -4,7 +4,6 @@ const SearchStyle = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   position: relative;
 
   .searchSection {
@@ -24,9 +23,10 @@ const SearchStyle = styled.main`
   }
   input[type="text"] {
     padding-left: 0.5vw;
-    width: 80%;
+    width: 95%;
     height: 100%;
     border: none;
+    /* text-align: center; */
     color: #2e1402;
     font-size: 17px;
     background-color: rgba(0, 0, 0, 0);
@@ -37,12 +37,14 @@ const SearchStyle = styled.main`
     font-size: 23px;
     color: #2e1402;
     position: relative;
-    left: 1vw;
+    /* left: 1.5vw; */
+    cursor: pointer;
   }
   .chooseLanguage {
     font-size: 23px;
     position: absolute;
-    left: 1.5vw;
+    left: 2vw;
+    cursor: pointer;
   }
   .remove {
     display: none;
