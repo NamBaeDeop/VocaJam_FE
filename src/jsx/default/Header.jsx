@@ -6,8 +6,8 @@ function Header() {
       <header>
         <img
           className="logo"
-          src="http://localhost:3000/img/logo.png
-        "
+          src="http://localhost:3000/img/logo.png"
+          // src="http://localhost:8070/img/logo.png"
         ></img>
       </header>
     </>

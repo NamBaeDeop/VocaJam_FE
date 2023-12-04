@@ -1,36 +1,24 @@
 import styled from "styled-components";
 
-const Wrong = styled.div`
+const WordCardStyle = styled.ul`
   width: 100%;
-  height: 100%;
+  height: 85%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
-  /* background-color: wheat; */
+  overflow-y: auto;
 
-  h2 {
-    margin-top: 3vh;
-  }
-  /* .wordList {
-    width: 100%;
-    height: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    overflow-y: auto;
-  }
-  .wordList::-webkit-scrollbar {
+  ul::-webkit-scrollbar {
     width: 8px;
   }
-  .wordList::-webkit-scrollbar-thumb {
+  ul::-webkit-scrollbar-thumb {
     border-radius: 20px;
     background-color: #a97362;
   }
   .word {
     padding-left: 1vw;
-    margin-bottom: 2vh;
+    margin-top: 2vh;
     width: 75%;
     height: 25%;
     border-radius: 20px;
@@ -44,13 +32,14 @@ const Wrong = styled.div`
     font-size: 13px;
   }
   .foreignLanguage {
-    margin-top: 2vh;
+    margin-top: 1vh;
     font-size: 25px;
-    font-weight: 900;
+    font-weight: 600;
   }
   .mean {
     margin-top: 0.5vh;
-    font-size: 20px;
-  } */
+    font-size: 17px;
+  }
 `;
-export default Wrong;
+
+export default WordCardStyle;

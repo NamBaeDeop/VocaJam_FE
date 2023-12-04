@@ -1,10 +1,11 @@
-// import Game from "./jsx/game/Game";
-import VocaMain from './jsx/vocabulary/VocaMain';
+import Game from "./jsx/game/Game";
+import Search from "./jsx/search/Search";
+import VocaMain from "./jsx/vocabulary/VocaMain";
 
 function App() {
   return (
     <>
-      <VocaMain/>
+      <VocaMain />
     </>
   );
 }

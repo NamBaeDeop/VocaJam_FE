@@ -14,6 +14,7 @@ function Language(props) {
           className="EN"
           onClick={(e) => {
             props.setLan(e.target.className);
+            props.setPop("remove");
           }}
         >
           영어
@@ -22,6 +23,7 @@ function Language(props) {
           className="JP"
           onClick={(e) => {
             props.setLan(e.target.className);
+            props.setPop("remove");
           }}
         >
           일본어
@@ -30,6 +32,7 @@ function Language(props) {
           className="CN"
           onClick={(e) => {
             props.setLan(e.target.className);
+            props.setPop("remove");
           }}
         >
           중국어

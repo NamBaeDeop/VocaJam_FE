@@ -1,11 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-// import VocaModal from "./jsx/VocaModal/VocaModal";
-
 import reportWebVitals from "./reportWebVitals";
-// import VocaPage from "./jsx/VocaPage/VocaPage";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
