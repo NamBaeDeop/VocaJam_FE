@@ -1,14 +1,10 @@
-import VocaPage from './jsx/VocaPage/VocaPage';
 // import Game from "./jsx/game/Game";
-import Header from "./jsx/default/Header";
-import Footer from "./jsx/default/Footer";
+import VocaMain from "./jsx/vocabulary/VocaMain";
 
 function App() {
   return (
     <>
-      <Header/>
-      <VocaPage />
-      <Footer />
+      <VocaMain />
     </>
   );
 }
