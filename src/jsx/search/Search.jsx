@@ -16,7 +16,7 @@ function Search() {
   const fetchFunc = async (e) => {
     try {
       let response = await fetch(
-        `localhost:8070/search/${lan}?Search_Word=${e.targte.value}`
+        `http://localhost:8070/search/${lan}?Search_Word=${e.targte.value}`
       );
       // console.log(e.target.value);
       // console.log(`localhost:8070/search/${lan}?Search_Word=${e.target.value}`);
