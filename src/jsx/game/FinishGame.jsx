@@ -6,7 +6,7 @@ function FinishGame() {
     useContext(GameContext);
 
   return (
-    <Finish className={score == 1 && wrongWordList == 0 ? "" : "remove"}>
+    <Finish className={score == 10 && wrongWordList == 0 ? "" : "remove"}>
       <div className="scoreBox">
         <span>틀린 단어</span>
         <span className="score">{wrongWordArr.current.length}</span>
@@ -26,7 +26,7 @@ function FinishGame() {
             setScore(0);
           }}
         >
-          {/* 재시작 */}
+          재시작
         </div>
       </div>
     </Finish>

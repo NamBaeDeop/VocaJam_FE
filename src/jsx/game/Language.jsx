@@ -11,28 +11,31 @@ function Language(props) {
       </span>
       <div className="languageBox">
         <p
-          className="EN"
+          className="en"
           onClick={(e) => {
             props.setLan(e.target.className);
+            props.setPop("remove");
           }}
         >
           영어
         </p>
         <p
-          className="JP"
+          className="cn"
           onClick={(e) => {
             props.setLan(e.target.className);
-          }}
-        >
-          일본어
-        </p>
-        <p
-          className="CN"
-          onClick={(e) => {
-            props.setLan(e.target.className);
+            props.setPop("remove");
           }}
         >
           중국어
+        </p>
+        <p
+          className="jp"
+          onClick={(e) => {
+            props.setLan(e.target.className);
+            props.setPop("remove");
+          }}
+        >
+          일본어
         </p>
       </div>
     </LanguageBox>

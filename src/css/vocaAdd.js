@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const AddForm = styled.div`
   background-color: #faeed6;
-  width: 360px;
-  height: 550px;
 `;
 
 export const WordBox = styled.div`
@@ -54,7 +52,6 @@ export const Word = styled.input`
   width: 295px;
   height: 44px;
   border-radius: 0px 10px 10px 10px;
-  padding-left: 7px;
 `;
 
 export const Meaning = styled.input`
@@ -63,7 +60,6 @@ export const Meaning = styled.input`
   width: 295px;
   height: 44px;
   border-radius: 0px 10px 10px 10px;
-  padding-left: 7px;
 `;
 
 export const Pronunciation = styled.input`
@@ -72,7 +68,6 @@ export const Pronunciation = styled.input`
   width: 295px;
   height: 44px;
   border-radius: 0px 10px 10px 10px;
-  padding-left: 7px;
 `;
 
 export const AddBox = styled.div`

@@ -1,35 +1,47 @@
 import React from "react";
 import { useState } from "react";
+
 import VocaCard from "../vocabulary/VocaCard";
-import { Main, GotoAdd, TitleBtnWrap } from "../../css/Vocapage";
+import Main from "../../css/Vocapage";
 import Add from "./Add";
 import Edit from "./Edit";
-import { EditForm, Word } from "../../css/vocaEdit";
 
-export default function VocaPage({ lang }) {
-  console.log(lang, "VocaPage");
+export default function VocaPage(props) {
   const [clicked, setClicked] = useState();
-
   return (
     <>
       {!clicked && (
-        <Main>
-          <TitleBtnWrap>
-            {lang === "EN" && <h1>영어</h1>}
-            {lang === "CN" && <h1>중국어</h1>}
-            {lang === "JP" && <h1>일본어</h1>}
-            <GotoAdd
+        <Main
+          // className={`${props.editMode ? "remove " : ""} ${
+          //   props.pop ? "" : "remove"
+          // }`}
+          className={`${props.editMode ? "remove" : ""} ${
+            props.pop ? "" : "remove"
+          }`}
+        >
+          <div className="TitleBtnWrap">
+            {/* {props.lang === "EN" && <h1>영어</h1>}
+            {props.lang === "CN" && <h1>중국어</h1>}
+            {props.lang === "JP" && <h1>일본어</h1>} */}
+            <div
+              className="GotoAdd"
               onClick={() => {
                 setClicked(true);
               }}
             >
               +
-            </GotoAdd>
-          </TitleBtnWrap>
-          <VocaCard lang={lang} />
+            </div>
+          </div>
+          <VocaCard
+            lang={props.lang}
+            editMode={props.editMode}
+            setEditMode={props.setEditMode}
+            modalWord={props.modalWord}
+            setModalWord={props.setModalWord}
+          />
         </Main>
       )}
-      {clicked && <Add lang={lang} />}
+      {clicked && <Add lang={props.lang} />}
     </>
   );
 }

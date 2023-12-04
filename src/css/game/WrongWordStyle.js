@@ -12,7 +12,7 @@ const Wrong = styled.div`
   h2 {
     margin-top: 3vh;
   }
-  .wordList {
+  /* .wordList {
     width: 100%;
     height: 85%;
     display: flex;
@@ -40,13 +40,6 @@ const Wrong = styled.div`
     position: relative;
     background-color: #c59c84;
   }
-  .word span {
-    font-size: 20px;
-    font-weight: 900;
-    position: absolute;
-    top: 0;
-    right: 1vw;
-  }
   p {
     font-size: 13px;
   }
@@ -58,6 +51,6 @@ const Wrong = styled.div`
   .mean {
     margin-top: 0.5vh;
     font-size: 20px;
-  }
+  } */
 `;
 export default Wrong;

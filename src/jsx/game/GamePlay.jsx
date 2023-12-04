@@ -1,7 +1,7 @@
 import { FaGlobeAsia } from "react-icons/fa";
 import Language from "./Language";
 import { useContext, useEffect, useRef, useState } from "react";
-import Play from "../../css/game/Play";
+import Play from "../../css/game/PlayStyle";
 import { GameContext } from "./Game";
 
 function GamePlay() {
@@ -17,8 +17,8 @@ function GamePlay() {
   const fetchFunc = async () => {
     try {
       // let respons = await fetch(`localhost:8070/game/${lan}`);
-      let respons = await fetch(`../words/${lan}.json`);
-      let dataArr = await respons.json();
+      let response = await fetch(`../words/${lan}.json`);
+      let dataArr = await response.json();
       setArr(dataArr);
     } catch (err) {
       console.log("err", err);
@@ -55,7 +55,6 @@ function GamePlay() {
     arr.otherMeaning3,
   ];
   const classArr = ["mean", "no", "no", "no"];
-
   const answer = (e) => {
     if (e.target.className.replace(/(answer| )/g, "") == "mean") {
       e.target.className = e.target.className + " good";
@@ -72,7 +71,7 @@ function GamePlay() {
   };
 
   return (
-    <Play className={score == 1 ? "remove" : ""}>
+    <Play className={score == 10 ? "remove" : ""}>
       <Language pop={pop} setPop={setPop} setLan={setLan} />
       <div className="gameHeader">
         <FaGlobeAsia
@@ -88,7 +87,7 @@ function GamePlay() {
           <span className="word">{arr.word}</span>
           <span className="pronunciation">{hint ? arr.pronunciation : ""}</span>
           <button
-            className={lan != "EN" ? "" : "remove"}
+            className={lan != "en" ? "" : "remove"}
             onClick={() => {
               setHint((prev) => !prev);
             }}

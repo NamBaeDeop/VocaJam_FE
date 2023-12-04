@@ -33,7 +33,7 @@ export default function Add({ lang }) {
     }
   };
   return (
-    <main>
+    <div>
       <AddForm>
         <WordBox>
           <AddWord>단어</AddWord>
@@ -65,7 +65,7 @@ export default function Add({ lang }) {
             }}
           ></Meaning>
         </MeanBox>
-        {lang !== "EN" && (
+        {lang !== "en" && (
           <PronBox>
             <AddPron>발음</AddPron>
             <Pronunciation
@@ -86,6 +86,6 @@ export default function Add({ lang }) {
           <AddBtn onClick={handleAddClick}>추가</AddBtn>
         </AddBox>
       </AddForm>
-    </main>
+    </div>
   );
 }
