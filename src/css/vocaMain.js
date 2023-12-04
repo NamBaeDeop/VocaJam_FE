@@ -9,8 +9,7 @@ const Main = styled.div`
   align-items: center;
 
   h1 {
-    padding-top: 15px;
-    padding-left: 15px;
+    margin-top: 30px;
     font-size: 30px;
     font-weight: bold;
   }

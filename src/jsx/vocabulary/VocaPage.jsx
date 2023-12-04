@@ -17,9 +17,9 @@ export default function VocaPage(props) {
           }`}
         >
           <div className="TitleBtnWrap">
-            {/* {props.lang === "EN" && <h1>영어</h1>}
-            {props.lang === "CN" && <h1>중국어</h1>}
-            {props.lang === "JP" && <h1>일본어</h1>} */}
+            {props.lang === "en" && <h1>영어</h1>}
+            {props.lang === "cn" && <h1>중국어</h1>}
+            {props.lang === "jp" && <h1>일본어</h1>}
             <div
               className="GotoAdd"
               onClick={() => {

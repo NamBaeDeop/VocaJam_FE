@@ -10,7 +10,7 @@ export const GameContext = createContext();
 
 function Game() {
   const [score, setScore] = useState(0);
-  const [lan, setLan] = useState("EN");
+  const [lan, setLan] = useState("en");
   const [wrongWordList, setWrongWordList] = useState(0);
   let answerBtn = useRef([]);
   let wrongWordArr = useRef([]);
