@@ -15,7 +15,7 @@ export default function Edit(props) {
     console.log(ex);
     try {
       const response = await fetch(
-        `localhost:8070/words/${props.lang}/${props.word.id}`,
+        `http://localhost:8070/words/${props.lang}/${props.word.id}`,
         {
           method: "PUT",
           headers: {

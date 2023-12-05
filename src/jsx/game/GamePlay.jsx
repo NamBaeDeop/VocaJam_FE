@@ -19,7 +19,7 @@ function GamePlay() {
 
   const fetchFunc = async () => {
     try {
-      let response = await fetch(`localhost:8070/game/${lan}`);
+      let response = await fetch(`http://localhost:8070/game/${lan}`);
       let dataArr = await response.json();
       setArr(dataArr);
     } catch (err) {

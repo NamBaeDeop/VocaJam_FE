@@ -1,13 +1,13 @@
-import Game from "./jsx/game/Game";
-import Search from "./jsx/search/Search";
-import VocaPage from "./jsx/vocabulary/VPage";
-import FinishGame from "./jsx/game/FinishGame";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createContext, useState, useRef } from "react";
 import Voca from "./jsx/vocabulary/Voca";
+import VocaPage from "./jsx/vocabulary/VPage";
 import Edit from "./jsx/vocabulary/VEdit";
 import Add from "./jsx/vocabulary/VAdd";
+import Game from "./jsx/game/Game";
+import FinishGame from "./jsx/game/FinishGame";
 import WrongWords from "./jsx/game/WrongWords";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
-import { createContext, useState, useRef } from "react";
+import Search from "./jsx/search/Search";
 export const GameContext = createContext();
 function App() {
   const [lang, setLang] = useState(null);

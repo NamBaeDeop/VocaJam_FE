@@ -9,7 +9,7 @@ export default function VocaCard(props) {
   const [showModal, setShowModal] = useState(false);
   const getData = async () => {
     try {
-      const response = await fetch(`localhost:8070/words/${props.lang}`);
+      const response = await fetch(`http://localhost:8070/words/${props.lang}`);
       // const response = await fetch(`../dum/dumen.json`);
       const data = await response.json();
       setVoca(data);

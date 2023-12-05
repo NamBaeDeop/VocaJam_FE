@@ -21,7 +21,7 @@ export default function VocaModal({
 
   const handleDelete = async () => {
     try {
-      await fetch(`localhost:8070/words/${lang}/${word.id}`, {
+      await fetch(`http://localhost:8070/words/${lang}/${word.id}`, {
         method: "DELETE",
       });
       onDelete(word.id);
