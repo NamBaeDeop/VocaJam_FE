@@ -19,8 +19,8 @@ function GamePlay() {
 
   const fetchFunc = async () => {
     try {
-      // let response = await fetch(`http://localhost:8070/game/${lan}`);
-      let response = await fetch(`/dum/enen.json`);
+      let response = await fetch(`http://localhost:8070/game/${lan}`);
+      // let response = await fetch(`/dum/enen.json`);
       let dataArr = await response.json();
       setArr(dataArr);
     } catch (err) {
