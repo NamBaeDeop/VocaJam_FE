@@ -1,20 +1,38 @@
 import { useContext } from "react";
-import { GameContext } from "./Game";
+import { GameContext } from "../../App";
 import WordCard from "./WordCard";
 import WordCardStyle from "../../css/game/WordCardStyle";
 import Wrong from "../../css/game/WrongWordStyle";
+import Header from "../default/Header";
+import Footer from "../default/Footer";
+import { useNavigate } from "react-router-dom";
 function WrongWords() {
-  const { wrongWordArr, wrongWordList, lan } = useContext(GameContext);
-
+  const { wrongWordArr, wrongWordList, lan, setScore } =
+    useContext(GameContext);
+  const navigate = useNavigate();
   return (
-    <Wrong className={wrongWordList ? "" : "remove"}>
-      <h2>틀린 단어</h2>
-      <WordCardStyle className="wordList">
-        {wrongWordArr.current.map((x) => (
-          <WordCard x={x} lan={lan} />
-        ))}
-      </WordCardStyle>
-    </Wrong>
+    <>
+      <Header />
+      <Wrong className={wrongWordList ? "" : "remove"}>
+        <h2>틀린 단어</h2>
+        <WordCardStyle className="wordList">
+          {wrongWordArr.current.map((x) => (
+            <WordCard x={x} lan={lan} />
+          ))}
+        </WordCardStyle>
+        <div
+          className="retry"
+          onClick={() => {
+            setScore(0);
+            navigate("/game");
+            wrongWordArr.current = [];
+          }}
+        >
+          재시작
+        </div>
+      </Wrong>
+      <Footer />
+    </>
   );
 }
 

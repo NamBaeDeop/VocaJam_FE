@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Div = styled.div`
+const Div = styled.main`
   .EditForm {
     background-color: #faeed6;
     width: 360px;
@@ -81,6 +81,15 @@ const Div = styled.div`
     border-style: none;
     background-color: #82502b;
     color: #f9e2d3;
+    cursor: pointer;
+  }
+  input {
+    text-indent: 10px;
+    font-size: 18px;
+    outline: none;
+  }
+  .ab {
+    position: absolute;
   }
 `;
 export default Div;

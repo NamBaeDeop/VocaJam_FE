@@ -5,32 +5,17 @@ import Footer from "../default/Footer";
 import Edit from "./Edit";
 
 import Main from "../../css/StyleVoca";
-import { useState } from "react";
 
-function Voca() {
-  const [lang, setLang] = useState(null);
-  const [pop, setPop] = useState(false);
-  const [editMode, setEditMode] = useState(false);
-  const [modalWord, setModalWord] = useState(null);
-
+function Voca(props) {
   return (
     <>
       <Header />
       <Main>
-        <VocaMain pop={pop} setPop={setPop} lang={lang} setLang={setLang} />
-        <Edit
-          word={modalWord}
-          editMode={editMode}
-          setEditMode={setEditMode}
-          lang={lang}
-        />
-        <VocaPage
-          lang={lang}
-          editMode={editMode}
-          setEditMode={setEditMode}
-          modalWord={modalWord}
-          setModalWord={setModalWord}
-          pop={pop}
+        <VocaMain
+          pop={props.pop}
+          setPop={props.setPop}
+          lang={props.lang}
+          setLang={props.setLang}
         />
       </Main>
       <Footer />

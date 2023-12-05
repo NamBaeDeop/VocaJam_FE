@@ -9,10 +9,10 @@ const WordCardStyle = styled.ul`
   align-items: center;
   overflow-y: auto;
 
-  ul::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 8px;
   }
-  ul::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     border-radius: 20px;
     background-color: #a97362;
   }

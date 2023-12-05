@@ -6,7 +6,6 @@ import WordCardStyle from "../../css/game/WordCardStyle";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
 import Language from "../game/Language";
-import SearchWordList from "./SearchWordList";
 import WordCard from "../game/WordCard";
 function Search() {
   const [lan, setLan] = useState("EN");
@@ -18,11 +17,8 @@ function Search() {
       let response = await fetch(
         `http://localhost:8070/search/${lan}?Search_Word=${e.targte.value}`
       );
-      // console.log(e.target.value);
-      // console.log(`localhost:8070/search/${lan}?Search_Word=${e.target.value}`);
-      // let response = await fetch(`../words/search${lan}.json`);
-      // let dataArr = await response.json();
-      // setSearchResult(dataArr);
+      let dataArr = await response.json();
+      setSearchResult(dataArr);
     } catch (err) {
       console.log("err", err);
     }

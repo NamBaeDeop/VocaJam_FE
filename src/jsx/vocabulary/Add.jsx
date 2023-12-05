@@ -1,21 +1,11 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import {
-  AddForm,
-  WordBox,
-  AddWord,
-  MeanBox,
-  Word,
-  AddMean,
-  Meaning,
-  PronBox,
-  AddPron,
-  Pronunciation,
-  AddBox,
-  AddBtn,
-} from "../../css/vocaAdd";
+import AddForm from "../../css/VocaAdd";
+import Header from "../default/Header";
+import Footer from "../default/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Add({ lang }) {
+  const navigate = useNavigate();
   const [ex, setEx] = useState({
     id: "",
     word: "",
@@ -25,67 +15,78 @@ export default function Add({ lang }) {
   const [voca, setVoca] = useState(0);
   const handleAddClick = async () => {
     try {
-      const response = await fetch(`localhost:8070//words/{lang}`);
-      const data = await response.json();
-      setEx(data);
+      const response = await fetch(`localhost:8070//words/${lang}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(ex),
+      });
     } catch (error) {
       console.error("패치 실패");
     }
   };
   return (
-    <div>
+    <>
+      <Header />
       <AddForm>
-        <WordBox>
-          <AddWord>단어</AddWord>
-          <Word
+        <div className="WordBox">
+          <span className="AddWord">단어</span>
+          <input
+            className="Word"
             type="text"
             onChange={(e) => {
-              console.log(e.target.value);
               setEx((prev) => {
                 let temp = prev;
                 temp.word = e.target.value;
-                console.log(temp);
                 return temp;
               });
             }}
-          ></Word>
-        </WordBox>
-        <MeanBox>
-          <AddMean>의미</AddMean>
-          <Meaning
+          ></input>
+        </div>
+        <div className="MeanBox">
+          <span className="AddMean">의미</span>
+          <input
+            className="Meaning"
             type="text"
             onChange={(e) => {
-              console.log(e.target.value);
               setEx((prev) => {
                 let temp = prev;
                 temp.meaning = e.target.value;
-                console.log(temp);
                 return temp;
               });
             }}
-          ></Meaning>
-        </MeanBox>
+          ></input>
+        </div>
         {lang !== "en" && (
-          <PronBox>
-            <AddPron>발음</AddPron>
-            <Pronunciation
+          <div className="PronBox">
+            <span className="AddPron">발음</span>
+            <input
+              className="Pronunciation"
               type="text"
               onChange={(e) => {
-                console.log(e.target.value);
                 setEx((prev) => {
                   let temp = prev;
                   temp.pronunciation = e.target.value;
-                  console.log(temp);
                   return temp;
                 });
               }}
-            ></Pronunciation>
-          </PronBox>
+            ></input>
+          </div>
         )}
-        <AddBox>
-          <AddBtn onClick={handleAddClick}>추가</AddBtn>
-        </AddBox>
+        <div className="AddBox">
+          <button
+            className="AddBtn"
+            onClick={() => {
+              handleAddClick();
+              navigate("/voca");
+            }}
+          >
+            추가
+          </button>
+        </div>
       </AddForm>
-    </div>
+      <Footer />
+    </>
   );
 }

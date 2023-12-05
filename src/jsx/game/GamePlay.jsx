@@ -2,7 +2,8 @@ import { FaGlobeAsia } from "react-icons/fa";
 import Language from "./Language";
 import { useContext, useEffect, useRef, useState } from "react";
 import Play from "../../css/game/PlayStyle";
-import { GameContext } from "./Game";
+import { GameContext } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 function GamePlay() {
   const { score, lan, answerBtn, setLan, wrongWordArr, setScore } =
@@ -12,12 +13,13 @@ function GamePlay() {
   const [arr, setArr] = useState({});
   const [hint, setHint] = useState(false);
 
+  const navigate = useNavigate();
+
   let ref = useRef();
 
   const fetchFunc = async () => {
     try {
       let response = await fetch(`localhost:8070/game/${lan}`);
-      // let response = await fetch(`../words/${lan}.json`);
       let dataArr = await response.json();
       setArr(dataArr);
     } catch (err) {
@@ -34,7 +36,7 @@ function GamePlay() {
     ref.current = Array.from(set);
   }, [score, lan]);
 
-  if (answerBtn.current != "") {
+  if (answerBtn.current[0] != null) {
     for (let i = 0; i < 4; i++) {
       answerBtn.current[i].className = answerBtn.current[i].className.replace(
         /(good|wrong)/g,
@@ -69,9 +71,12 @@ function GamePlay() {
     }
     setTimeout(() => setScore((prev) => (prev = prev + 1)), 1500);
   };
+  if (score == 10) {
+    navigate("/finish");
+  }
 
   return (
-    <Play className={score == 10 ? "remove" : ""}>
+    <Play>
       <Language pop={pop} setPop={setPop} setLan={setLan} />
       <div className="gameHeader">
         <FaGlobeAsia
