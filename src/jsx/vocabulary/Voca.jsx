@@ -1,10 +1,10 @@
-import VocaMain from "./VocaMain";
-import VocaPage from "./VocaPage";
+import VocaMain from "./VMain";
+import VocaPage from "./VPage";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
-import Edit from "./Edit";
+import Edit from "./VEdit";
 
-import Main from "../../css/StyleVoca";
+import Main from "../../css/vocabulary/VocaStyle";
 
 function Voca(props) {
   return (

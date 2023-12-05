@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Div from "../../css/VocaEdit";
+import Div from "../../css/vocabulary/VocaEditStyle";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
 import { useNavigate } from "react-router-dom";

@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-import VocaCard from "../vocabulary/VocaCard";
-import Main from "../../css/Vocapage";
+import VocaCard from "./VCard";
+import Main from "../../css/vocabulary/VocapageStyle";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
 import { useNavigate } from "react-router-dom";

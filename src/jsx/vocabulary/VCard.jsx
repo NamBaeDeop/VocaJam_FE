@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import VocaModal from "./VocaModal";
-import CardStyle from "../../css/VocaCard";
-import Edit from "./Edit";
+import VocaModal from "./VModal";
+import CardStyle from "../../css/vocabulary/VocaCardStyle";
+import Edit from "./VEdit";
 
 export default function VocaCard(props) {
   const [voca, setVoca] = useState([]);

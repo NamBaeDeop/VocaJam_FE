@@ -1,10 +1,10 @@
 import Game from "./jsx/game/Game";
 import Search from "./jsx/search/Search";
-import VocaPage from "./jsx/vocabulary/VocaPage";
+import VocaPage from "./jsx/vocabulary/VPage";
 import FinishGame from "./jsx/game/FinishGame";
 import Voca from "./jsx/vocabulary/Voca";
-import Edit from "./jsx/vocabulary/Edit";
-import Add from "./jsx/vocabulary/Add";
+import Edit from "./jsx/vocabulary/VEdit";
+import Add from "./jsx/vocabulary/VAdd";
 import WrongWords from "./jsx/game/WrongWords";
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import { createContext, useState, useRef } from "react";

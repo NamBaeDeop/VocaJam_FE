@@ -1,6 +1,6 @@
 import React from "react";
 // import { useState } from "react";
-import { Modal } from "../../css/VocaModal";
+import { Modal } from "../../css/vocabulary/VocaModalStyle";
 import { useNavigate } from "react-router-dom";
 // import { EditForm } from "../../css/VocaEdit";
 // import Edit from "./Edit";
