@@ -8,7 +8,7 @@ import Footer from "../default/Footer";
 import Language from "../game/Language";
 import WordCard from "../game/WordCard";
 function Search() {
-  const [lan, setLan] = useState("EN");
+  const [lan, setLan] = useState("en");
   const [pop, setPop] = useState("remove");
   const [searchResult, setSearchResult] = useState([]);
 
