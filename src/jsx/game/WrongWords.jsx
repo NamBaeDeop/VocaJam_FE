@@ -17,8 +17,8 @@ function WrongWords() {
         <h2>틀린 단어</h2>
         <WordCardStyle className="wordList">
           {wrongWordArr.current.map(
-            (x) => console.log()
-            // <WordCard x={x} lan={lan} />
+            // (x) => console.log()
+            <WordCard x={x} lan={lan} />
           )}
         </WordCardStyle>
         <div
