@@ -87,6 +87,13 @@ export default function Edit(props) {
           )}
           <div className="EditBox">
             <button
+              onClick={() => {
+                navigate("/voca");
+              }}
+            >
+              뒤로가기
+            </button>
+            <button
               className="EditBtn"
               onClick={() => {
                 handleEditClick();

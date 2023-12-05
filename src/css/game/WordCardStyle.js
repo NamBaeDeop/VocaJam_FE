@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const WordCardStyle = styled.ul`
+  margin-top: 15px;
   width: 100%;
-  height: 85%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: start;

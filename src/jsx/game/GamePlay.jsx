@@ -76,6 +76,9 @@ function GamePlay() {
     navigate("/finish");
   }
 
+  const langArr = ["영어", "중국어", "일본어"];
+  const langKey = ["en", "cn", "jp"];
+
   return (
     <Play>
       <Language pop={pop} setPop={setPop} setLan={setLan} />
@@ -87,7 +90,7 @@ function GamePlay() {
           }}
         />
         <p className="progress">{score}/10</p>
-        <span>{lan}</span>
+        <span className="currentLang">{langArr[langKey.indexOf(lan)]}</span>
       </div>
       <div className="gameSection">
         <div className="question">

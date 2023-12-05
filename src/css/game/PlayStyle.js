@@ -23,7 +23,6 @@ const Play = styled.div`
     cursor: pointer;
   }
   .progress {
-    margin-top: 1vh;
     font-size: 25px;
     font-weight: 600;
   }
@@ -100,6 +99,9 @@ const Play = styled.div`
     width: 43%;
     height: 98%;
     border: 3px solid red;
+  }
+  .currentLang {
+    margin-top: 7px;
   }
 `;
 

@@ -21,7 +21,7 @@ export default function VocaCard(props) {
   useEffect(() => {
     getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.lang]);
+  }, []);
   // console.log(voca);
 
   const openModal = (clickedWord) => {
@@ -66,6 +66,7 @@ export default function VocaCard(props) {
           editMode={props.editMode}
           setEditMode={props.setEditMode}
           setShowModal={setShowModal}
+          lang={props.lang}
         />
       )}
     </>
