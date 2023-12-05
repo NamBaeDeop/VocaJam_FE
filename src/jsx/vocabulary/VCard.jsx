@@ -10,8 +10,8 @@ export default function VocaCard(props) {
   const getData = async () => {
     console.log("a");
     try {
-      // const response = await fetch(`http://localhost:8070/words/${props.lang}`);
-      const response = await fetch(`../dum/en.json`);
+      const response = await fetch(`http://localhost:8070/words/${props.lang}`);
+      // const response = await fetch(`../dum/en.json`);
       const data = await response.json();
       setVoca(data);
     } catch (error) {

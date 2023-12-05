@@ -3,7 +3,7 @@ import styled from "styled-components";
 const WordCardStyle = styled.ul`
   margin-top: 15px;
   width: 100%;
-  height: 70%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -18,13 +18,14 @@ const WordCardStyle = styled.ul`
     background-color: #a97362;
   }
   .word {
-    padding-left: 1vw;
     margin-top: 2vh;
     width: 75%;
     height: 25%;
     border-radius: 20px;
+    text-indent: 15px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     flex-shrink: 0;
     position: relative;
     background-color: #c59c84;
@@ -33,12 +34,10 @@ const WordCardStyle = styled.ul`
     font-size: 13px;
   }
   .foreignLanguage {
-    margin-top: 1vh;
     font-size: 25px;
     font-weight: 600;
   }
   .mean {
-    margin-top: 0.5vh;
     font-size: 17px;
   }
 `;

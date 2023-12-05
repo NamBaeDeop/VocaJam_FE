@@ -52,7 +52,7 @@ const SearchStyle = styled.main`
   }
   .resultSection {
     width: 100%;
-    height: 90%;
+    height: 80%;
   }
 `;
 
