@@ -8,13 +8,14 @@ export default function VocaCard(props) {
   const [voca, setVoca] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const getData = async () => {
+    console.log("a");
     try {
-      const response = await fetch(`http://localhost:8070/words/${props.lang}`);
-      // const response = await fetch(`../dum/dumen.json`);
+      // const response = await fetch(`http://localhost:8070/words/${props.lang}`);
+      const response = await fetch(`../dum/en.json`);
       const data = await response.json();
       setVoca(data);
     } catch (error) {
-      console.error("어 패치 실패했어~", error);
+      console.error(error);
     }
   };
 
@@ -22,7 +23,6 @@ export default function VocaCard(props) {
     getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // console.log(voca);
 
   const openModal = (clickedWord) => {
     props.setModalWord(clickedWord);
@@ -36,8 +36,8 @@ export default function VocaCard(props) {
 
   return (
     <>
-      {voca.map((item) => (
-        <CardStyle className="card" key={item.id}>
+      {voca.map((item, x) => (
+        <CardStyle className="card" key={x}>
           <div className="con card_top">
             <span className="word">{item.word}</span>
             <span
@@ -62,7 +62,6 @@ export default function VocaCard(props) {
       {showModal && (
         <VocaModal
           word={props.modalWord}
-          onClose={closeModal}
           editMode={props.editMode}
           setEditMode={props.setEditMode}
           setShowModal={setShowModal}

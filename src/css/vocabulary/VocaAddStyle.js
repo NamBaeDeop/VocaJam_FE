@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
-const AddForm = styled.main`
-  background-color: #faeed6;
+const Div = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  .formSction {
+    width: 100%;
+    height: 80%;
+  }
   .WordBox {
     display: flex;
     flex-direction: column;
@@ -61,19 +67,31 @@ const AddForm = styled.main`
     border-radius: 0px 10px 10px 10px;
   }
   .AddBox {
-    padding-top: 100px;
-    padding-left: 258px;
-    padding-bottom: 20px;
+    width: 85%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
   }
-  .AddBtn {
-    width: 69px;
-    height: 35.61px;
+  .back {
+    width: 80px;
+    height: 36px;
+    font-size: 17px;
+    font-style: 2e1402;
     border-radius: 10px;
     border-style: none;
     background-color: #82502b;
     color: #f9e2d3;
-    font-size: 16px;
+    cursor: pointer;
+  }
+  .AddBtn {
+    width: 80px;
+    height: 36px;
+    font-size: 17px;
     font-style: 2e1402;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #82502b;
+    color: #f9e2d3;
     cursor: pointer;
   }
   input {
@@ -83,4 +101,4 @@ const AddForm = styled.main`
   }
 `;
 
-export default AddForm;
+export default Div;

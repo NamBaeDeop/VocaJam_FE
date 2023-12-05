@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 const Div = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .EditForm {
-    background-color: #faeed6;
-    width: 360px;
-    height: 550px;
+    width: 100%;
+    height: 80%;
   }
   .WordBox {
     display: flex;
@@ -68,14 +71,15 @@ const Div = styled.main`
     padding-left: 7px;
   }
   .EditBox {
-    padding-top: 100px;
-    padding-left: 258px;
-    padding-bottom: 20px;
+    width: 85%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
   }
   .EditBtn {
-    width: 69px;
-    height: 35.61px;
-    font-size: 16px;
+    width: 80px;
+    height: 36px;
+    font-size: 17px;
     font-style: 2e1402;
     border-radius: 10px;
     border-style: none;
@@ -90,6 +94,17 @@ const Div = styled.main`
   }
   .ab {
     position: absolute;
+  }
+  .back {
+    width: 80px;
+    height: 36px;
+    font-size: 17px;
+    font-style: 2e1402;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #82502b;
+    color: #f9e2d3;
+    cursor: pointer;
   }
 `;
 export default Div;

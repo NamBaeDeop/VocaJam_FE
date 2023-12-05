@@ -24,7 +24,7 @@ export default function VocaModal({
       await fetch(`http://localhost:8070/words/${lang}/${word.id}`, {
         method: "DELETE",
       });
-      onDelete(word.id);
+      // onDelete(word.id);
       setShowModal(false);
     } catch (error) {
       setShowModal(false);
