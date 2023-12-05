@@ -21,6 +21,7 @@ const Main = styled.main`
     margin-top: 20px;
     display: flex;
     width: 275px;
+    height: 10%;
     justify-content: end;
     align-items: center;
   }
@@ -39,6 +40,18 @@ const Main = styled.main`
   }
   .remove {
     display: none;
+  }
+  ul {
+    width: 100%;
+    height: 90%;
+    overflow-y: auto;
+  }
+  ul::-webkit-scrollbar {
+    width: 8px;
+  }
+  ul::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: #a97362;
   }
 `;
 export default Main;

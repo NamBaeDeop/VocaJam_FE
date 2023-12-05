@@ -10,7 +10,7 @@ import WrongWords from "./jsx/game/WrongWords";
 import Search from "./jsx/search/Search";
 export const GameContext = createContext();
 function App() {
-  const [lang, setLang] = useState(null);
+  const [lang, setLang] = useState("en");
   const [pop, setPop] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [modalWord, setModalWord] = useState(null);

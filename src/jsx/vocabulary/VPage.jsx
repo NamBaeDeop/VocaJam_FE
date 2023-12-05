@@ -30,13 +30,15 @@ export default function VocaPage(props) {
             +
           </div>
         </div>
-        <VocaCard
-          lang={props.lang}
-          editMode={props.editMode}
-          setEditMode={props.setEditMode}
-          modalWord={props.modalWord}
-          setModalWord={props.setModalWord}
-        />
+        <ul>
+          <VocaCard
+            lang={props.lang}
+            editMode={props.editMode}
+            setEditMode={props.setEditMode}
+            modalWord={props.modalWord}
+            setModalWord={props.setModalWord}
+          />
+        </ul>
       </Main>
       <Footer />
     </>

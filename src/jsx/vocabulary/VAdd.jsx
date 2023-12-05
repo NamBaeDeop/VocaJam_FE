@@ -15,7 +15,7 @@ export default function Add({ lang }) {
   const [voca, setVoca] = useState(0);
   const handleAddClick = async () => {
     try {
-      const response = await fetch(`http://localhost:8070//words/${lang}`, {
+      const response = await fetch(`http://localhost:8070/words/${lang}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
