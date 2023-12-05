@@ -16,10 +16,9 @@ function WrongWords() {
       <Wrong className={wrongWordList ? "" : "remove"}>
         <h2>틀린 단어</h2>
         <WordCardStyle className="wordList">
-          {wrongWordArr.current.map(
-            // (x) => console.log()
+          {wrongWordArr.current.map((x) => (
             <WordCard x={x} lan={lan} />
-          )}
+          ))}
         </WordCardStyle>
         <div
           className="retry"
