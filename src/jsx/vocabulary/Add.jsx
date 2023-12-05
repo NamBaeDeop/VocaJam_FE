@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AddForm from "../../css/vocaAdd";
+import AddForm from "../../css/VocaAdd";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
 import { useNavigate } from "react-router-dom";
