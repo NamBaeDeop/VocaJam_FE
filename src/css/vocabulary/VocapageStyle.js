@@ -48,7 +48,6 @@ const Main = styled.main`
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    /*aa  */
   }
   ul::-webkit-scrollbar {
     width: 8px;

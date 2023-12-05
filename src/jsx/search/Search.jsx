@@ -15,7 +15,7 @@ function Search() {
   const fetchFunc = async (e) => {
     try {
       let response = await fetch(
-        `http://localhost:8070/search/${lan}?Search_Word=${e.targte.value}`
+        `http://localhost:8070/search/${lan}?Search_Word=${e.target.value}`
       );
       let dataArr = await response.json();
       setSearchResult(dataArr);
@@ -25,6 +25,7 @@ function Search() {
   };
 
   const searchFunc = (e) => {
+    console.log(e.targte);
     if (e.key == "Enter") {
       fetchFunc(e);
     }
@@ -50,7 +51,12 @@ function Search() {
             <input
               type="text"
               placeholder="검색어를 입력해 주세요"
-              onKeyDown={searchFunc}
+              onKeyDown={(e) => {
+                if (e.key == "Enter") {
+                  // console.log(e.target);
+                  fetchFunc(e);
+                }
+              }}
             />
             <IoSearch className="searchIcon" onClick={searchFunc} />
           </div>

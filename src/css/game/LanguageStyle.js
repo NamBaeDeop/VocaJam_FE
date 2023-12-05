@@ -45,5 +45,9 @@ const LanguageBox = styled.div`
     background-color: white;
     cursor: pointer;
   }
+  p:active {
+    background-color: #db6969;
+    color: white;
+  }
 `;
 export default LanguageBox;

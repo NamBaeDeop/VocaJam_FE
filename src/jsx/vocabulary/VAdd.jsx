@@ -42,6 +42,7 @@ export default function Add({ lang }) {
                 return temp;
               });
             }}
+            required
           ></input>
         </div>
         <div className="MeanBox">
@@ -56,6 +57,7 @@ export default function Add({ lang }) {
                 return temp;
               });
             }}
+            required
           ></input>
         </div>
         {lang !== "en" && (
@@ -71,6 +73,7 @@ export default function Add({ lang }) {
                   return temp;
                 });
               }}
+              required
             ></input>
           </div>
         )}

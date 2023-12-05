@@ -63,7 +63,7 @@ const Play = styled.div`
   .pronunciation {
     font-size: 14px;
     position: absolute;
-    top: 12.5vh;
+    top: 105px;
   }
   .answerBox {
     width: 75%;
