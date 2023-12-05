@@ -8,7 +8,6 @@ const AddForm = styled.main`
     flex-direction: column;
     padding-left: 33px;
     padding-top: 25px;
-    /*  */
   }
   .MeanBox {
     display: flex;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import VocaPage from "./VocaPage";
-import Main from "../../css/VocaMain";
+import Main from "../../css/vocaMain";
 import { useNavigate } from "react-router-dom";
 export default function VocaMain(props) {
   // const [lang, setLang] = useState(null);
