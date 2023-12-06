@@ -18,8 +18,8 @@ const Play = styled.div`
   .globe {
     font-size: 30px;
     position: relative;
-    top: 20px;
-    right: 145px;
+    top: 18px;
+    right: 150px;
     cursor: pointer;
   }
   .progress {
