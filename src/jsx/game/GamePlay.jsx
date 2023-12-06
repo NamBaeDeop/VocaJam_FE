@@ -6,10 +6,17 @@ import { GameContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 function GamePlay() {
-  const { score, lan, answerBtn, setLan, wrongWordArr, setScore } =
-    useContext(GameContext);
+  const {
+    score,
+    lang,
+    answerBtn,
+    setLang,
+    wrongWordArr,
+    setScore,
+    pop,
+    setPop,
+  } = useContext(GameContext);
 
-  const [pop, setPop] = useState("remove");
   const [arr, setArr] = useState({});
   const [hint, setHint] = useState(false);
 
@@ -19,7 +26,7 @@ function GamePlay() {
 
   const fetchFunc = async () => {
     try {
-      let response = await fetch(`http://localhost:8070/game/${lan}`);
+      let response = await fetch(`http://localhost:8070/game/${lang}`);
       // let response = await fetch(`/dum/enen.json`);
       let dataArr = await response.json();
       setArr(dataArr);
@@ -35,7 +42,7 @@ function GamePlay() {
       set.add(Math.floor(Math.random() * 4));
     }
     ref.current = Array.from(set);
-  }, [score, lan]);
+  }, [score, lang]);
 
   if (answerBtn.current[0] != null) {
     for (let i = 0; i < 4; i++) {
@@ -81,23 +88,23 @@ function GamePlay() {
 
   return (
     <Play>
-      <Language pop={pop} setPop={setPop} setLan={setLan} />
+      <Language />
       <div className="gameHeader">
         <FaGlobeAsia
           className="globe"
           onClick={() => {
-            setPop("");
+            setPop(true);
           }}
         />
         <p className="progress">{score}/10</p>
-        <span className="currentLang">{langArr[langKey.indexOf(lan)]}</span>
+        <span className="currentLang">{langArr[langKey.indexOf(lang)]}</span>
       </div>
       <div className="gameSection">
         <div className="question">
           <span className="word">{arr.word}</span>
           <span className="pronunciation">{hint ? arr.pronunciation : ""}</span>
           <button
-            className={lan != "en" ? "" : "remove"}
+            className={lang != "en" ? "" : "remove"}
             onClick={() => {
               setHint((prev) => !prev);
             }}

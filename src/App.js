@@ -16,7 +16,6 @@ function App() {
   const [modalWord, setModalWord] = useState(null);
 
   const [score, setScore] = useState(0);
-  const [lan, setLan] = useState("en");
   const [wrongWordList, setWrongWordList] = useState(0);
   let answerBtn = useRef([null]);
   let wrongWordArr = useRef([]);
@@ -25,13 +24,15 @@ function App() {
       <GameContext.Provider
         value={{
           score,
-          lan,
+          lang,
           wrongWordList,
           setWrongWordList,
           answerBtn,
           wrongWordArr,
           setScore,
-          setLan,
+          setLang,
+          pop,
+          setPop,
         }}
       >
         <Routes>
@@ -76,7 +77,6 @@ function App() {
             }
           />
           <Route path="/search" element={<Search />} />
-
           <Route path="/game" element={<Game />} />
           <Route path="/finish" element={<FinishGame />} />
           <Route path="/worngword" element={<WrongWords />} />

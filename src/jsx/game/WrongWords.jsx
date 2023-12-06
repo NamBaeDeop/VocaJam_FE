@@ -7,7 +7,7 @@ import Header from "../default/Header";
 import Footer from "../default/Footer";
 import { useNavigate } from "react-router-dom";
 function WrongWords() {
-  const { wrongWordArr, wrongWordList, lan, setScore } =
+  const { wrongWordArr, wrongWordList, lang, setScore } =
     useContext(GameContext);
   const navigate = useNavigate();
   return (
@@ -17,7 +17,7 @@ function WrongWords() {
         <h2>틀린 단어</h2>
         <WordCardStyle className="wordList">
           {wrongWordArr.current.map((x) => (
-            <WordCard x={x} lan={lan} />
+            <WordCard x={x} lang={lang} />
           ))}
         </WordCardStyle>
         <div

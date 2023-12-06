@@ -3,7 +3,7 @@ function WordCard(props) {
     <>
       <li className="word">
         <p className="foreignLanguage">{props.x.word}</p>
-        <p className={`pronunciation ${props.lan == "en" ? "remove" : ""}`}>
+        <p className={`pronunciation ${props.lang == "en" ? "remove" : ""}`}>
           {props.x.pronunciation}
         </p>
         <p className="mean">{props.x.meaning}</p>

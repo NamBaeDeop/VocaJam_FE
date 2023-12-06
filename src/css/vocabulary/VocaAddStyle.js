@@ -5,27 +5,36 @@ const Div = styled.main`
   flex-direction: column;
   align-items: center;
 
+  .AddForm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
   .formSction {
     width: 100%;
     height: 80%;
   }
   .WordBox {
+    width: auto;
+    height: 25%;
     display: flex;
     flex-direction: column;
-    padding-left: 33px;
-    padding-top: 25px;
+    justify-content: center;
   }
   .MeanBox {
+    width: auto;
+    height: 25%;
     display: flex;
     flex-direction: column;
-    padding-left: 33px;
-    padding-top: 25px;
   }
   .PronBox {
+    width: auto;
+    height: 25%;
     display: flex;
     flex-direction: column;
-    padding-left: 33px;
-    padding-top: 25px;
   }
   .AddWord {
     font-style: 2e1402;
@@ -98,6 +107,17 @@ const Div = styled.main`
     font-size: 18px;
     text-indent: 10px;
     outline: none;
+  }
+  form input:focus:invalid {
+    outline: auto;
+    outline-color: red;
+  }
+  .inputSection {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 

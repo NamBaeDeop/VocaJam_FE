@@ -1,6 +1,7 @@
 import { IoSearch } from "react-icons/io5";
 import { FaGlobeAsia } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
+import { GameContext } from "../../App";
 import SearchStyle from "../../css/search/SearchStyle";
 import WordCardStyle from "../../css/game/WordCardStyle";
 import Header from "../default/Header";
@@ -8,14 +9,15 @@ import Footer from "../default/Footer";
 import Language from "../game/Language";
 import WordCard from "../game/WordCard";
 function Search() {
-  const [lan, setLan] = useState("en");
-  const [pop, setPop] = useState("remove");
   const [searchResult, setSearchResult] = useState([]);
+  const langArr = ["영어", "중국어", "일본어"];
+  const langKey = ["en", "cn", "jp"];
 
+  const { lang, setPop } = useContext(GameContext);
   const fetchFunc = async (e) => {
     try {
       let response = await fetch(
-        `http://localhost:8070/search/${lan}?Search_Word=${e.target.value}`
+        `http://localhost:8070/search/${lang}?Search_Word=${e.target.value}`
       );
       // const response = await fetch(`../dum/en.json`);
       let dataArr = await response.json();
@@ -26,7 +28,6 @@ function Search() {
   };
 
   const searchFunc = (e) => {
-    console.log(e.targte);
     if (e.key == "Enter") {
       fetchFunc(e);
     }
@@ -34,27 +35,29 @@ function Search() {
 
   useEffect(() => {
     setSearchResult([]);
-  }, [lan]);
+  }, [lang]);
 
   return (
     <>
       <Header />
       <SearchStyle>
-        <Language pop={pop} setPop={setPop} setLan={setLan} />
+        <Language />
         <div className="searchSection">
           <FaGlobeAsia
             className="chooseLanguage"
             onClick={() => {
-              setPop("");
+              setPop(true);
             }}
           />
+          <span className="currentLanguage">
+            {langArr[langKey.indexOf(lang)]}
+          </span>
           <div>
             <input
               type="text"
               placeholder="검색어를 입력해 주세요"
               onKeyDown={(e) => {
                 if (e.key == "Enter") {
-                  // console.log(e.target);
                   fetchFunc(e);
                 }
               }}
@@ -65,7 +68,7 @@ function Search() {
         <section className="resultSection">
           <WordCardStyle>
             {searchResult.map((x) => (
-              <WordCard x={x} lan={lan} />
+              <WordCard x={x} lang={lang} />
             ))}
           </WordCardStyle>
         </section>

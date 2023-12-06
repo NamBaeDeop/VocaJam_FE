@@ -22,6 +22,7 @@ export default function Add({ lang }) {
         },
         body: JSON.stringify(ex),
       });
+      navigate("/voca");
     } catch (error) {
       console.error("패치 실패");
     }
@@ -30,72 +31,81 @@ export default function Add({ lang }) {
     <>
       <Header />
       <Div>
-        <form className="AddForm">
-          <div className="WordBox">
-            <span className="AddWord">단어</span>
-            <input
-              className="Word"
-              type="text"
-              onChange={(e) => {
-                setEx((prev) => {
-                  let temp = prev;
-                  temp.word = e.target.value;
-                  return temp;
-                });
-              }}
-              required
-            ></input>
+        <form
+          className="AddForm"
+          onKeyDown={(e) => {
+            if (e.key == "Enter") {
+              e.preventDefault();
+            }
+          }}
+        >
+          <div className="inputSection">
+            <div className="WordBox">
+              <span className="AddWord">단어</span>
+              <input
+                className="Word"
+                type="text"
+                onChange={(e) => {
+                  setEx((prev) => {
+                    let temp = prev;
+                    temp.word = e.target.value;
+                    return temp;
+                  });
+                }}
+                required
+              />
+            </div>
+            <div className="MeanBox">
+              <span className="AddMean">의미</span>
+              <input
+                className="Meaning"
+                type="text"
+                onChange={(e) => {
+                  setEx((prev) => {
+                    let temp = prev;
+                    temp.meaning = e.target.value;
+                    return temp;
+                  });
+                }}
+                required
+              />
+            </div>
+            <div className="PronBox">
+              <span className="AddPron">발음</span>
+              <input
+                className="Pronunciation"
+                type="text"
+                onChange={(e) => {
+                  setEx((prev) => {
+                    let temp = prev;
+                    temp.pronunciation = e.target.value;
+                    return temp;
+                  });
+                }}
+                required
+              />
+            </div>
           </div>
-          <div className="MeanBox">
-            <span className="AddMean">의미</span>
-            <input
-              className="Meaning"
-              type="text"
-              onChange={(e) => {
-                setEx((prev) => {
-                  let temp = prev;
-                  temp.meaning = e.target.value;
-                  return temp;
-                });
+          <div className="AddBox">
+            <button
+              className="back"
+              onClick={() => {
+                navigate("/voca");
               }}
-              required
-            ></input>
-          </div>
-          <div className="PronBox">
-            <span className="AddPron">발음</span>
-            <input
-              className="Pronunciation"
-              type="text"
-              onChange={(e) => {
-                setEx((prev) => {
-                  let temp = prev;
-                  temp.pronunciation = e.target.value;
-                  return temp;
-                });
+            >
+              뒤로가기
+            </button>
+            <button
+              type="submit"
+              className="AddBtn"
+              onClick={() => {
+                handleAddClick();
               }}
-              required
-            ></input>
+            >
+              추가
+            </button>
           </div>
         </form>
-        <div className="AddBox">
-          <button
-            className="back"
-            onClick={() => {
-              navigate("/voca");
-            }}
-          >
-            뒤로가기
-          </button>
-          <button
-            className="AddBtn"
-            onClick={() => {
-              handleAddClick();
-              navigate("/voca");
-            }}
-          >
-            추가
-          </button>
-        </div>
       </Div>
       <Footer />
     </>

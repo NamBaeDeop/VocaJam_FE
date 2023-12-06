@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 const Div = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   .EditForm {
     width: 100%;
-    height: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .WordBox {
     display: flex;
@@ -105,6 +104,14 @@ const Div = styled.main`
     background-color: #82502b;
     color: #f9e2d3;
     cursor: pointer;
+  }
+  form input:focus:invalid {
+    outline: auto;
+    outline-color: red;
+  }
+  .inputSection {
+    width: 100%;
+    height: 80%;
   }
 `;
 export default Div;
