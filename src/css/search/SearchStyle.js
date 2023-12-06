@@ -61,7 +61,6 @@ const SearchStyle = styled.main`
     margin-top: 30px;
     width: 100%;
     height: 80%;
-    background-color: yellowgreen;
   }
 `;
 
