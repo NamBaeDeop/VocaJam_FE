@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function VocaPage(props) {
   const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
   return (
     <>
       <Header />
@@ -37,6 +38,8 @@ export default function VocaPage(props) {
             setEditMode={props.setEditMode}
             modalWord={props.modalWord}
             setModalWord={props.setModalWord}
+            setShowModal={setShowModal}
+            showModal={showModal}
           />
         </ul>
       </Main>

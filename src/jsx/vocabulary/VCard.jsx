@@ -6,7 +6,6 @@ import Edit from "./VEdit";
 
 export default function VocaCard(props) {
   const [voca, setVoca] = useState([]);
-  const [showModal, setShowModal] = useState(false);
   const getData = async () => {
     console.log("a");
     try {
@@ -26,11 +25,11 @@ export default function VocaCard(props) {
 
   const openModal = (clickedWord) => {
     props.setModalWord(clickedWord);
-    setShowModal(true);
+    props.setShowModal(true);
   };
 
   const closeModal = () => {
-    setShowModal(false);
+    props.setShowModal(false);
     props.setModalWord(null);
   };
 
@@ -59,12 +58,12 @@ export default function VocaCard(props) {
           <span className="con meaning">{item.meaning}</span>
         </CardStyle>
       ))}
-      {showModal && (
+      {props.showModal && (
         <VocaModal
           word={props.modalWord}
           editMode={props.editMode}
           setEditMode={props.setEditMode}
-          setShowModal={setShowModal}
+          setShowModal={props.setShowModal}
           lang={props.lang}
         />
       )}

@@ -93,6 +93,7 @@ export default function Edit(props) {
                     setEx((prev) => {
                       let temp = prev;
                       temp.pronunciation = e.target.value;
+                      console.log(temp.pronunciation);
                       return temp;
                     });
                   }}
