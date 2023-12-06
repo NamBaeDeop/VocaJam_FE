@@ -40,6 +40,10 @@ export default function Edit(props) {
               e.preventDefault();
             }
           }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleEditClick();
+          }}
         >
           <div className="inputSection">
             <div className="WordBox">
@@ -111,15 +115,7 @@ export default function Edit(props) {
             >
               뒤로가기
             </button>
-            <button
-              className="EditBtn"
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleEditClick();
-              }}
-            >
-              수정
-            </button>
+            <button className="EditBtn">수정</button>
           </div>
         </form>
       </Div>

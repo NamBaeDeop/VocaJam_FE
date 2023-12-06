@@ -38,6 +38,10 @@ export default function Add({ lang }) {
               e.preventDefault();
             }
           }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleAddClick();
+          }}
         >
           <div className="inputSection">
             <div className="WordBox">
@@ -98,14 +102,7 @@ export default function Add({ lang }) {
             >
               뒤로가기
             </button>
-            <button
-              type="submit"
-              className="AddBtn"
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleAddClick();
-              }}
-            >
+            <button type="submit" className="AddBtn">
               추가
             </button>
           </div>
