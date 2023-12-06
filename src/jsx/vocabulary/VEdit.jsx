@@ -55,7 +55,7 @@ export default function Edit(props) {
                   });
                 }}
                 defaultValue={props.word != null ? props.word.word : ""}
-                maxLength={10}
+                maxLength={16}
                 required
               />
             </div>
@@ -75,7 +75,7 @@ export default function Edit(props) {
                   });
                 }}
                 defaultValue={props.word != null ? props.word.meaning : ""}
-                maxLength={10}
+                maxLength={16}
                 required
               />
             </div>
@@ -95,7 +95,7 @@ export default function Edit(props) {
                   defaultValue={
                     props.word != null ? props.word.pronunciation : ""
                   }
-                  maxLength={10}
+                  maxLength={16}
                   required
                 />
               </div>
@@ -113,9 +113,9 @@ export default function Edit(props) {
             </button>
             <button
               className="EditBtn"
-              onClick={(e) => {
-                handleEditClick();
+              onSubmit={(e) => {
                 e.preventDefault();
+                handleEditClick();
               }}
             >
               수정

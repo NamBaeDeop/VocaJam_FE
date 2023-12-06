@@ -52,7 +52,7 @@ export default function Add({ lang }) {
                     return temp;
                   });
                 }}
-                maxLength={10}
+                maxLength={16}
                 required
               />
             </div>
@@ -68,7 +68,7 @@ export default function Add({ lang }) {
                     return temp;
                   });
                 }}
-                maxLength={10}
+                maxLength={16}
                 required
               />
             </div>
@@ -84,7 +84,7 @@ export default function Add({ lang }) {
                     return temp;
                   });
                 }}
-                maxLength={10}
+                maxLength={16}
                 required
               />
             </div>
@@ -101,7 +101,8 @@ export default function Add({ lang }) {
             <button
               type="submit"
               className="AddBtn"
-              onClick={() => {
+              onSubmit={(e) => {
+                e.preventDefault();
                 handleAddClick();
               }}
             >
