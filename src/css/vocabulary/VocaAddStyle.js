@@ -119,6 +119,9 @@ const Div = styled.main`
     flex-direction: column;
     align-items: center;
   }
+  .remove {
+    display: none;
+  }
 `;
 
 export default Div;

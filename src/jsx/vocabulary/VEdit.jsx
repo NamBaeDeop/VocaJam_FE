@@ -54,6 +54,7 @@ export default function Edit(props) {
                   });
                 }}
                 defaultValue={props.word != null ? props.word.word : ""}
+                maxLength={10}
                 required
               />
             </div>
@@ -73,6 +74,7 @@ export default function Edit(props) {
                   });
                 }}
                 defaultValue={props.word != null ? props.word.meaning : ""}
+                maxLength={10}
                 required
               />
             </div>
@@ -92,6 +94,7 @@ export default function Edit(props) {
                   defaultValue={
                     props.word != null ? props.word.pronunciation : ""
                   }
+                  maxLength={10}
                   required
                 />
               </div>

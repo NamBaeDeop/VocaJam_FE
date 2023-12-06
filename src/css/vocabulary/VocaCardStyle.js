@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 const CardStyle = styled.li`
-  width: 250px;
-  height: 90px;
+  width: 267px;
+  height: 97px;
   background-color: #d4af9a;
   border-radius: 20px;
-  padding: 15px;
-
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   justify-content: space-between;
 
   &:not(:first-child) {
@@ -26,7 +26,7 @@ const CardStyle = styled.li`
   }
 
   .word {
-    font-size: 24px;
+    font-size: 23px;
     font-weight: 900;
   }
 

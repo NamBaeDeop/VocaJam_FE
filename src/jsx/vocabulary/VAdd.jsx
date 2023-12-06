@@ -52,6 +52,7 @@ export default function Add({ lang }) {
                     return temp;
                   });
                 }}
+                maxLength={10}
                 required
               />
             </div>
@@ -67,10 +68,11 @@ export default function Add({ lang }) {
                     return temp;
                   });
                 }}
+                maxLength={10}
                 required
               />
             </div>
-            <div className="PronBox">
+            <div className={lang == "en" ? "remove" : "PronBox"}>
               <span className="AddPron">발음</span>
               <input
                 className="Pronunciation"
@@ -82,6 +84,7 @@ export default function Add({ lang }) {
                     return temp;
                   });
                 }}
+                maxLength={10}
                 required
               />
             </div>

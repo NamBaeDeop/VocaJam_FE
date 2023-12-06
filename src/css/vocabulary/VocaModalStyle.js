@@ -15,7 +15,7 @@ export const Modal = styled.div`
 
   .TitleExit {
     width: 100%;
-    height: 80px;
+    height: 60px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -29,19 +29,25 @@ export const Modal = styled.div`
   }
 
   .word {
+    width: 80%;
+    text-indent: 15px;
     font-size: 27px;
     font-weight: bold;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .exit {
     font-size: 20px;
-    margin-left: 20px;
+    margin-right: 10px;
     cursor: pointer;
   }
 
   .Btns {
     width: 100%;
-    height: 140px;
+    height: 160px;
     display: flex;
 
     flex-direction: column;
