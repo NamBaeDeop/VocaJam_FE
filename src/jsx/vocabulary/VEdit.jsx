@@ -100,7 +100,7 @@ export default function Edit(props) {
                     props.word != null ? props.word.pronunciation : ""
                   }
                   maxLength={16}
-                  required
+                  required={lang == "en" ? false : true}
                 />
               </div>
             )}

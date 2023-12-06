@@ -89,7 +89,7 @@ export default function Add({ lang }) {
                   });
                 }}
                 maxLength={16}
-                required
+                required={lang == "en" ? false : true}
               />
             </div>
           </div>
