@@ -8,13 +8,12 @@ import { useNavigate } from "react-router-dom";
 function GamePlay() {
   const {
     score,
-    lang,
+    gameLang,
     answerBtn,
-    setLang,
     wrongWordArr,
     setScore,
     pop,
-    setPop,
+    setPopLang,
   } = useContext(GameContext);
 
   const [arr, setArr] = useState({});
@@ -26,7 +25,7 @@ function GamePlay() {
 
   const fetchFunc = async () => {
     try {
-      let response = await fetch(`http://localhost:8070/game/${lang}`);
+      let response = await fetch(`http://localhost:8070/game/${gameLang}`);
       // let response = await fetch(`/dum/enen.json`);
       let dataArr = await response.json();
       setArr(dataArr);
@@ -39,10 +38,11 @@ function GamePlay() {
     fetchFunc();
     let set = new Set();
     while (set.size != 4) {
-      set.add(Math.floor(Math.random() * 4));
+      set.add(Math.floor(Math.random() * 4)); // 1~4까지 랜덤 & 중복 없이 숫자 생성 해 배열처럼 가지고 있으나 배열은 아님 }
+      ref.current = Array.from(set); //Arry.from을 이용해  랜덤한 숫자가 들어있는 set을 ref에 넣어줌 뱐수처럼 사용할 예정
+      // console.log(ref.current);
     }
-    ref.current = Array.from(set);
-  }, [score, lang]);
+  }, [score, gameLang]);
 
   if (answerBtn.current[0] != null) {
     for (let i = 0; i < 4; i++) {
@@ -53,7 +53,7 @@ function GamePlay() {
     }
   }
 
-  let randomNum0 = `${ref.current != undefined ? ref.current[0] : ""}`;
+  let randomNum0 = `${ref.current != undefined ? ref.current[0] : ""}`; // ref.current의 값은 페이지가 렌더링 될때마다 랜덤하게 바뀜
   let randomNum1 = `${ref.current != undefined ? ref.current[1] : ""}`;
   let randomNum2 = `${ref.current != undefined ? ref.current[2] : ""}`;
   let randomNum3 = `${ref.current != undefined ? ref.current[3] : ""}`;
@@ -71,10 +71,14 @@ function GamePlay() {
     } else {
       e.target.className = e.target.className + " wrong";
       wrongWordArr.current.push(arr);
-      answerBtn.current.map((x, y) =>
-        x.className.replace(/(answer| )/g, "") == "mean"
-          ? (x.className = x.className + " good")
-          : ""
+      answerBtn.current.map(
+        (
+          x,
+          y // return 부분에서 답 버튼들의 정보를 담아주었음 이를 map을 이용해 클래스 조회
+        ) =>
+          x.className.replace(/(answer| )/g, "") == "mean"
+            ? (x.className = x.className + " good")
+            : ""
       );
     }
     setTimeout(() => setScore((prev) => (prev = prev + 1)), 1500);
@@ -93,18 +97,20 @@ function GamePlay() {
         <FaGlobeAsia
           className="globe"
           onClick={() => {
-            setPop(true);
+            setPopLang(true);
           }}
         />
         <p className="progress">{score}/10</p>
-        <span className="currentLang">{langArr[langKey.indexOf(lang)]}</span>
+        <span className="currentLang">
+          {langArr[langKey.indexOf(gameLang)]}
+        </span>
       </div>
       <div className="gameSection">
         <div className="question">
           <span className="word">{arr.word}</span>
           <span className="pronunciation">{hint ? arr.pronunciation : ""}</span>
           <button
-            className={lang != "en" ? "" : "remove"}
+            className={gameLang != "en" ? "" : "remove"}
             onClick={() => {
               setHint((prev) => !prev);
             }}

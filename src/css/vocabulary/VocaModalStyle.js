@@ -61,11 +61,14 @@ export const Modal = styled.div`
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-size: 20px;
+
+    .Btn:active {
+      background-color: #db6969;
+      color: white;
+    }
   }
 `;

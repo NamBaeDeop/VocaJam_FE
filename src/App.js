@@ -17,6 +17,8 @@ function App() {
 
   const [score, setScore] = useState(0);
   const [wrongWordList, setWrongWordList] = useState(0);
+  const [popLang, setPopLang] = useState(false);
+  const [gameLang, setGameLang] = useState("en");
   let answerBtn = useRef([null]);
   let wrongWordArr = useRef([]);
   return (
@@ -33,6 +35,11 @@ function App() {
           setLang,
           pop,
           setPop,
+          setPopLang,
+          popLang,
+          gameLang,
+          setLang,
+          setGameLang,
         }}
       >
         <Routes>

@@ -2,21 +2,24 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { GameContext } from "../../App";
 import LanguageBox from "../../css/game/LanguageStyle";
-function Language() {
-  const { wrongWordArr, setScore, setLang, setPop, pop } =
+function Language(props) {
+  const { wrongWordArr, setScore, setGameLang, setPopLang, popLang, setLang } =
     useContext(GameContext);
   const navigate = useNavigate();
   const changeLanguage = (e) => {
-    setLang(e.target.className);
-    setPop(false);
+    setGameLang(e.target.className);
+    if (props.search) {
+      setLang(e.target.className);
+    }
+    setPopLang(false);
     wrongWordArr.current = [];
     setScore(0); //---------------------------->서버 돌려서 확인해야 됨
   };
   return (
-    <LanguageBox className={`${pop ? "" : "remove"} ${"language"}`}>
+    <LanguageBox className={`${popLang ? "" : "remove"} ${"language"}`}>
       <span
         onClick={() => {
-          setPop(false);
+          setPopLang(false);
         }}
       >
         x

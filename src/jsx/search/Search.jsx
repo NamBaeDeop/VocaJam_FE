@@ -13,7 +13,8 @@ function Search() {
   const langArr = ["영어", "중국어", "일본어"];
   const langKey = ["en", "cn", "jp"];
 
-  const { lang, setPop } = useContext(GameContext);
+  const { lang, setPopLang } = useContext(GameContext);
+
   const fetchFunc = async (e) => {
     try {
       let response = await fetch(
@@ -37,16 +38,20 @@ function Search() {
     setSearchResult([]);
   }, [lang]);
 
+  // useEffect(() => {
+  //   setPop(false);
+  // }, []);
+
   return (
     <>
       <Header />
       <SearchStyle>
-        <Language />
+        <Language search={true} />
         <div className="searchSection">
           <FaGlobeAsia
             className="chooseLanguage"
             onClick={() => {
-              setPop(true);
+              setPopLang(true);
             }}
           />
           <span className="currentLanguage">
