@@ -1,9 +1,6 @@
 import React from "react";
-// import { useState } from "react";
 import { Modal } from "../../css/vocabulary/VocaModalStyle";
 import { useNavigate } from "react-router-dom";
-// import { EditForm } from "../../css/VocaEdit";
-// import Edit from "./Edit";
 export default function VocaModal({
   lang,
   word,
@@ -24,7 +21,6 @@ export default function VocaModal({
       await fetch(`http://localhost:8070/words/${lang}/${word.id}`, {
         method: "DELETE",
       });
-      // onDelete(word.id);
       setShowModal(false);
     } catch (error) {
       setShowModal(false);

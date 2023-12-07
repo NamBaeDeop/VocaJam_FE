@@ -7,13 +7,15 @@ function Language(props) {
     useContext(GameContext);
   const navigate = useNavigate();
   const changeLanguage = (e) => {
-    setGameLang(e.target.className);
+    if (props.game) {
+      setGameLang(e.target.className);
+    }
     if (props.search) {
       setLang(e.target.className);
     }
     setPopLang(false);
     wrongWordArr.current = [];
-    setScore(0); //---------------------------->서버 돌려서 확인해야 됨
+    setScore(0);
   };
   return (
     <LanguageBox className={`${popLang ? "" : "remove"} ${"language"}`}>

@@ -20,7 +20,6 @@ function Search() {
       let response = await fetch(
         `http://localhost:8070/search/${lang}?Search_Word=${e.target.value}`
       );
-      // const response = await fetch(`../dum/en.json`);
       let dataArr = await response.json();
       setSearchResult(dataArr);
     } catch (err) {
@@ -37,10 +36,6 @@ function Search() {
   useEffect(() => {
     setSearchResult([]);
   }, [lang]);
-
-  // useEffect(() => {
-  //   setPop(false);
-  // }, []);
 
   return (
     <>

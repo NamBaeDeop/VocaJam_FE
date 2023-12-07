@@ -12,10 +12,10 @@ function GamePlay() {
     answerBtn,
     wrongWordArr,
     setScore,
-    pop,
+    popLang,
     setPopLang,
   } = useContext(GameContext);
-
+  console.log(gameLang);
   const [arr, setArr] = useState({});
   const [hint, setHint] = useState(false);
 
@@ -92,7 +92,7 @@ function GamePlay() {
 
   return (
     <Play>
-      <Language />
+      <Language game={true} />
       <div className="gameHeader">
         <FaGlobeAsia
           className="globe"
